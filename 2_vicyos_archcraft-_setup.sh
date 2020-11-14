@@ -40,7 +40,7 @@ if pacman -Qi trizen &> /dev/null; then
 	echo "Trizen is already installed." 
 else
 	trizen_file="trizen_for_vicyos.tar.gz" 
-	if [ -f "$trizen_file" ];then
+	if [ -f "$trizen_file" ]; then
 		sudo rm -Rv trizen_for_vicyos.tar.gz
 	fi
 until [ -f "$trizen_file" ] 
