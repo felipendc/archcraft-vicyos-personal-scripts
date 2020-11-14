@@ -115,6 +115,7 @@ trizen -S google-chrome --needed --noconfirm
 trizen -S visual-studio-code-bin --needed --noconfirm
 trizen -S android-studio --needed --noconfirm
 trizen -S flutter --needed --noconfirm
+sudo flutter
 }
 
 add_vicyos_repo 
