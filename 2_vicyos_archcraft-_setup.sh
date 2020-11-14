@@ -43,6 +43,7 @@ else
 	if [ -f "$trizen_file" ]; then
 		sudo rm -Rv trizen_for_vicyos.tar.gz
 	fi
+	
 until [ -f "$trizen_file" ] 
 
 do 
