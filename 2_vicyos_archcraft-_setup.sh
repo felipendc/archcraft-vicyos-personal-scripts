@@ -112,8 +112,9 @@ trizen -S wget --needed --noconfirm
 trizen -S redshiftgui-bin --needed --noconfirm
 trizen -S python --needed --noconfirm
 trizen -S google-chrome --needed --noconfirm
-
-
+trizen -S visual-studio-code-bin --needed --noconfirm
+trizen -S android-studio --needed --noconfirm
+trizen -S flutter --needed --noconfirm
 }
 
 add_vicyos_repo 
