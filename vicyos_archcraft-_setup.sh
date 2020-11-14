@@ -80,45 +80,49 @@ rm -Rvf trizen_for_vicyos.tar.gz
 
 personal_pkgs(){
 
+###### Pacman ########
 # fix timezone:
-trizen -S chrony --needed --noconfirm
-
-#redshiftgui-bin
-trizen -S gnome-system-monitor --needed --noconfirm
+sudo pacman -S chrony --noconfirm
 
 # Davinci Resolve fix:
-trizen -S ocl-icd --needed --noconfirm
+sudo pacman -S ocl-icd --noconfirm
 
-trizen -S playerctl --needed --noconfirm
-trizen -S gimp --needed --noconfirm
-trizen -S inkscape --needed --noconfirm
-trizen -S qbittorrent --needed --noconfirm
-trizen -S vlc --needed --noconfirm
-trizen -S youtube-dl --needed --noconfirm
-trizen -S clementine --needed --noconfirm
-trizen -S krita --needed --noconfirm
-trizen -S gnome-calculator --needed --noconfirm
-trizen -S clipgrab --needed --noconfirm
-trizen -S pinta --needed --noconfirm
-trizen -S filezilla --needed --noconfirm
+sudo pacman -S gnome-system-monitor --noconfirm
+sudo pacman -S playerctl --noconfirm
+sudo pacman -S gimp --noconfirm
+sudo pacman -S inkscape --noconfirm
+sudo pacman -S qbittorrent --noconfirm
+sudo pacman -S vlc --noconfirm
+sudo pacman -S youtube-dl --noconfirm
+sudo pacman -S clementine --noconfirm
+sudo pacman -S krita --noconfirm
+sudo pacman -S gnome-calculator --noconfirm
+sudo pacman -S clipgrab --noconfirm
+sudo pacman -S pinta --noconfirm
+sudo pacman -S filezilla --noconfirm
 
-#wget 
-trizen -S python  --needed --noconfirm
-trizen -S python-pip --needed --noconfirm
-trizen -S curl --needed --noconfirm
-trizen -S simple-scan --needed --noconfirm
-trizen -S arandr --needed --noconfirm
-trizen -S hwinfo --needed --noconfirm
+ 
+
+sudo pacman -S python-pip  --noconfirm
+sudo pacman -S curl --noconfirm
+sudo pacman -S simple-scan --noconfirm
+sudo pacman -S arandr --noconfirm
+sudo pacman -S hwinfo --noconfirm
+
+
+###### Trizen #######
 
 # Hplib Gui:
 trizen -S python-pyqt4 --needed --noconfirm
 trizen -S python-pyqt5 --needed --noconfirm
 
+trizen -S wget  --needed --noconfirm
+trizen -S redshiftgui-bin --needed --noconfirm
+trizen -S python  --needed --noconfirm
+
 }
 
-#update ok
-#vicyos_repo ok
-#add_vicyos_repo ok
+add_vicyos_repo 
 download_trizen 
 personal_pkgs
-
+update 
