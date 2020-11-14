@@ -3,7 +3,6 @@
 
 update () {
 # Update the packages
-
 sudo pacman -Syyu
 }
 
