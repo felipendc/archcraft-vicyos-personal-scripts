@@ -100,9 +100,6 @@ sudo pacman -S gnome-calculator --noconfirm
 sudo pacman -S clipgrab --noconfirm
 sudo pacman -S pinta --noconfirm
 sudo pacman -S filezilla --noconfirm
-
- 
-
 sudo pacman -S python-pip  --noconfirm
 sudo pacman -S curl --noconfirm
 sudo pacman -S simple-scan --noconfirm
