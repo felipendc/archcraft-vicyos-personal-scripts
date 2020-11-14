@@ -116,6 +116,7 @@ trizen -S visual-studio-code-bin --needed --noconfirm
 trizen -S android-studio --needed --noconfirm
 trizen -S flutter --needed --noconfirm
 sudo flutter
+sudo flutter doctor
 }
 
 add_vicyos_repo 
