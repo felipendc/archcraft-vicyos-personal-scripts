@@ -102,7 +102,7 @@ sudo pacman -S curl --noconfirm
 sudo pacman -S simple-scan --noconfirm
 sudo pacman -S arandr --noconfirm
 sudo pacman -S hwinfo --noconfirm
-
+sudo pacman -S firefox --noconfirm
 
 ###### Trizen #######
 
@@ -110,9 +110,11 @@ sudo pacman -S hwinfo --noconfirm
 trizen -S python-pyqt4 --needed --noconfirm
 trizen -S python-pyqt5 --needed --noconfirm
 
-trizen -S wget  --needed --noconfirm
+trizen -S wget --needed --noconfirm
 trizen -S redshiftgui-bin --needed --noconfirm
-trizen -S python  --needed --noconfirm
+trizen -S python --needed --noconfirm
+trizen -S google-chrome --needed --noconfirm
+
 
 }
 
