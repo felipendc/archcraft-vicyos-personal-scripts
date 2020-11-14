@@ -45,7 +45,6 @@ else
 	fi
 	
 until [ -f "$trizen_file" ] 
-
 do 
 	wget -c https://aur.archlinux.org/cgit/aur.git/snapshot/trizen.tar.gz -O trizen_for_vicyos.tar.gz
 	sleep 3
