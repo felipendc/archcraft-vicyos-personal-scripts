@@ -1,9 +1,6 @@
 #!/bin/bash
 # github.com/felipendc
 
-#-------------Variables--------------#
-
-#------------------------------------#
 update () {
 # Update the packages
 
