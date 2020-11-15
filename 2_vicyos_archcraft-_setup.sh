@@ -61,11 +61,11 @@ fi
 
 install_trizen(){
 
+# Compile trizen, install it, and clean up temp files
 cd trizen
 makepkg -s
 sudo pacman -U trizen*.zst --noconfirm
 cd ../
-echo"Cleaning up temp files"
 rm -Rvf trizen
 rm -Rvf trizen_for_vicyos.tar.gz
 }
