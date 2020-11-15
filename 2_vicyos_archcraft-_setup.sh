@@ -2,13 +2,14 @@
 # github.com/felipendc
 
 update () {
-# Update the packages
-sudo pacman -Syyu
+
+# Sync and refresh pacman database and update the packages
+sudo pacman -Syyu --noconfirm
 }
 
 vicyos_repo () {
-# Append vicyos repo
 
+# Append vicyos repo
 cat >> /etc/pacman.conf <<- _EOF_
 
 	## Vicyos Repository
@@ -22,7 +23,6 @@ add_vicyos_repo () {
 	
 # Check if Vicyos repository already exists. 
 # If it's missing, add it to the pacman.config file.
-
 repo_get_line=$(grep -E "(vicyos-repo)" /etc/pacman.conf)
 repo_vicyos_line="[vicyos-repo]"
 
@@ -37,6 +37,8 @@ fi
 
 download_trizen(){
 
+# Download trizen snapshot (PKGBUILD file) 
+# Wait until trizen snapshot is downloaded and trigger the trizen installation function (install_trizen)
 if pacman -Qi trizen &> /dev/null; then
 	echo "Trizen is already installed." 
 else
