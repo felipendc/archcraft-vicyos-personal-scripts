@@ -61,7 +61,7 @@ fi
 
 install_trizen(){
 
-# Compile trizen, install it, and clean up temp the files
+# Compile trizen, install it, and clean up the temp files
 cd trizen
 makepkg -s
 sudo pacman -U trizen*.zst --noconfirm
