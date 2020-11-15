@@ -128,7 +128,7 @@ alias trash='cd ~/.local/share/Trash'
 alias cleartrash='sudo   rm -rf ~/.local/share/Trash/*'
 
 # update the packages with pacman and yay
-alias upall="sudo pacman -Syyu && yay -Syu --noconfirm"
+alias upall="sudo pacman -Syyu --noconfirm && yay -Syu --noconfirm"
 alias update='sudo pacman -Syyu'
 
 #pacman unlock
