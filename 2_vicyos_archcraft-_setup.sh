@@ -19,6 +19,7 @@ cat >> /etc/pacman.conf <<- _EOF_
 }
 
 add_vicyos_repo () {
+	
 # Check if Vicyos repository already exists. 
 # If it's missing, add it to the pacman.config file.
 
@@ -35,7 +36,7 @@ fi
 }
 
 download_trizen(){
-	
+
 if pacman -Qi trizen &> /dev/null; then
 	echo "Trizen is already installed." 
 else
@@ -60,10 +61,6 @@ fi
 
 install_trizen(){
 
-echo "Unpacking file" 
-rm -Rvf trizen
-tar -zxvf trizen_for_vicyos.tar.gz
-
 cd trizen
 makepkg -s
 sudo pacman -U trizen*.zst --noconfirm
@@ -71,6 +68,57 @@ cd ../
 echo"Cleaning up temp files"
 rm -Rvf trizen
 rm -Rvf trizen_for_vicyos.tar.gz
+}
+
+
+vicyos_polybar(){
+
+original_polybar="$HOME/.config/polybar/launch.sh"
+backup_folder="$HOME/vicyos_backups"
+
+if [ -e "$original_polybar" ]; then
+
+	# Make a backup of the polybar folder to "~/vicyos_backups"
+	zip polybar_backup.zip -r ~/.config/polybar
+	if [ -d "$backup_folder" ]; then
+		rm -R $backup_folder
+		mkdir $backup_folder
+	else
+		mkdir $backup_folder
+	fi
+	mv polybar_backup.zip $backup_folder
+
+	# Make a backup of the autostart file to "~/vicyos_backups"
+	# Set the right polybar ".sh" file to autostart
+	cp -r ~/.config/openbox/autostart $backup_folder
+	sed -i '/sh ~\/.config\/polybar\/launch.sh/c\sh ~\/.config\/polybar\/vicyos_modified_polybar.sh' ~/.config/openbox/autostart
+    
+	# Remove the polybar folder to avoid any conflicts
+	# Copy the vicyos modified polybar files to ~/.config/polybar
+	rm -R ~/.config/polybar
+	cp -r needed_files/vicyos_modified_polybar ~/.config/polybar
+
+	# Make some polybar files executable
+	chmod +x ~/.config/polybar/vicyos_modified_polybar.sh
+	chmod +x ~/.config/polybar/wave/launch.sh
+	chmod +x ~/.config/polybar/spark/launch.sh
+	chmod +x ~/.config/polybar/manhattan/launch.sh
+	chmod +x ~/.config/polybar/grid/launch.sh
+	chmod +x ~/.config/polybar/forest/launch.sh
+	chmod +x ~/.config/polybar/default/launch.sh
+	chmod +x ~/.config/polybar/beach/launch.sh	
+else
+	echo "Vicyos modified Polybar is already installed"
+fi
+}
+
+vicyos_zsh(){
+
+# Remove old .zshrc to avoid any conflicts
+# Move vicyos_modified_zshrc to Home folder renamed to .zshrc
+rm -R $HOME/.zshrc
+cp -r needed_files/vicyos_modified_zshrc/vicyos_modified_zshrc $HOME/.zshrc
+source $HOME/.zshrc
 }
 
 personal_pkgs(){
@@ -101,11 +149,13 @@ sudo pacman -S simple-scan --noconfirm
 sudo pacman -S arandr --noconfirm
 sudo pacman -S hwinfo --noconfirm
 sudo pacman -S firefox --noconfirm
+sudo pacman -S adb --noconfirm
+
 
 ###### Trizen #######
 
 # Hplib Gui:
-trizen -S python-pyqt4 --needed --noconfirm
+#trizen -S python-pyqt4 --needed --noconfirm 
 trizen -S python-pyqt5 --needed --noconfirm
 
 trizen -S wget --needed --noconfirm
@@ -121,5 +171,7 @@ sudo flutter doctor
 
 add_vicyos_repo 
 download_trizen 
+vicyos_polybar
+vicyos_zsh
 personal_pkgs
 update 
