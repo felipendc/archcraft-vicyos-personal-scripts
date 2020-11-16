@@ -49,7 +49,6 @@ sudo pacman -U trizen*.zst --noconfirm
 cd ../
 rm -Rvf trizen
 sudo rm -Rv $trizen_file
-
 }
 
 snapshot(){
