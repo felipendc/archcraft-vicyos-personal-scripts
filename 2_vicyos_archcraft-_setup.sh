@@ -108,7 +108,7 @@ else
 				echo ""
 				echo "Download failed! $trizen_file file wasn't downloaded successfully!" 
 				echo "Time is out! 120 seconds (2 minutes) went by." 
-				echo "Please, check if your internet speed or your connection and try again." 
+				echo "Please, check if your internet speed is slow or your connection is working and try again." 
 				echo ""
 				exit
 			else
