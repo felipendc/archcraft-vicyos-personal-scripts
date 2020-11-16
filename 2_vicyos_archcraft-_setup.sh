@@ -84,6 +84,7 @@ else
 	#If the trizen file don't exist then, download it
 	if [ ! -e "$trizen_file" ]; then
 
+
 		# Loop through the below commands until trizen_file is downloaded
 		# Or wait 120 seconds (2 minutes) and exit the entire script
 		until [ -e "$trizen_file" ] 
