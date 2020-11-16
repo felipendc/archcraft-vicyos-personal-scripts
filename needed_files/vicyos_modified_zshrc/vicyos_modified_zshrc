@@ -117,8 +117,8 @@ alias gc='git commit -m'
 alias gp='git push origin master'
 
 
-# export PATH="$PATH:/home/vicyos/flutter/bin"
-# export PATH="$PATH:/home/vicyos/Android/Sdk/platform-tools"
+export PATH="$PATH:/home/vicyos/flutter/bin"
+export PATH="$PATH:/home/vicyos/Android/Sdk/platform-tools"
 
 bindkey -v
 neofetch
