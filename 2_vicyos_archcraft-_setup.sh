@@ -35,33 +35,14 @@ else
 fi
 }
 
-download_trizen(){
 
-# Download trizen snapshot (PKGBUILD file) 
-# Wait until trizen snapshot is downloaded and trigger the trizen installation function (install_trizen)
-if pacman -Qi trizen &> /dev/null; then
-	echo "Trizen is already installed." 
-else
-	trizen_file="trizen_for_vicyos.tar.gz" 
-	if [ -f "$trizen_file" ]; then
-		sudo rm -Rv trizen_for_vicyos.tar.gz
-	fi
-	
-until [ -f "$trizen_file" ] 
-do 
-	wget -c https://aur.archlinux.org/cgit/aur.git/snapshot/trizen.tar.gz -O trizen_for_vicyos.tar.gz
-	sleep 10
-	if [ -f "$trizen_file" ]; then
-		break
-	else
-		echo "trizen_for_vicyos.tar.gz doesn't exist" 
-	fi
-done
-install_trizen
-fi
-}
 
 install_trizen(){
+
+# Unpacking file
+
+rm -Rvf trizen
+tar -xvf $trizen_file
 
 # Compile trizen, install it, and clean up the temp files
 cd trizen
@@ -69,9 +50,87 @@ makepkg -s
 sudo pacman -U trizen*.zst --noconfirm
 cd ../
 rm -Rvf trizen
-rm -Rvf trizen_for_vicyos.tar.gz
+
+sudo rm -Rv $trizen_file
+# rm -Rvf trizen.tar.gz
 }
 
+snapshot(){
+
+# It waits 10 secs and then it downloads the trizen snapshot (PKGBUILD file) 
+# and self stop after the download is finished!
+sleep 5
+curl https://aur.archlinux.org/cgit/aur.git/snapshot/trizen.tar.gz --output trizen.tar.gz
+
+}
+
+trizen(){
+trizen_file="trizen.tar.gz" 
+
+counter=0
+seconds_is=""
+
+
+# Wait until trizen snapshot is downloaded and trigger the trizen installation function (install_trizen)
+if  pacman -Qi trizen &> /dev/null; then
+	echo "Trizen is already installed." 
+	exit
+
+else
+
+	if [ -e "$trizen_file" ]; then
+
+		# Clean up to avoid any conflicts
+		sudo rm -Rv $trizen_file
+	
+		# It waits for the download to finished!
+		snapshot &
+	else
+		snapshot &
+	fi
+
+	#If the trizen file don't exist then, download it
+	if [ ! -e "$trizen_file" ]; then
+
+	# Loop through the below commands until trizen_file is downloaded
+	# Or wait 120 seconds (2 minutes) and exit the entire script
+		until [ -e "$trizen_file" ] 
+		do
+			# For each second add +1 to the counter variable
+			counter=$((counter+1))
+
+			# Verify if the number in "counter" is plural or singular and add it to the "seconds_is" variable
+			if [ $counter == 1 ]; then
+				seconds_is=" second"
+			else
+				seconds_is=" seconds"
+			fi
+
+			# Wait 1 second
+			sleep 1
+			if [ -e "$trizen_file" ]; then
+				echo "Congrats!!! $trizen_file file was downloaded successfully!"
+
+		
+			elif [ "$counter" == 121 ]; then
+				clear
+				echo ""
+				echo "Download failed! $trizen_file file wasn't downloaded successfully!" 
+				echo "Time is out! 120 seconds (2 minutes) went by." 
+				echo "Please, check if your internet speed or your connection and try again." 
+				echo ""
+				exit
+				
+			else
+				echo "Please wait... $trizen_file is being downloaded! $counter$seconds_is"
+			fi
+		done
+		
+	fi
+fi
+wait -n
+install_trizen
+}
 
 vicyos_polybar(){
 
@@ -172,7 +231,7 @@ sudo flutter doctor
 }
 
 add_vicyos_repo 
-download_trizen 
+trizen
 vicyos_polybar
 vicyos_zsh
 personal_pkgs
