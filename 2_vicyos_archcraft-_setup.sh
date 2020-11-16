@@ -1,5 +1,6 @@
 #!/bin/bash
 # github.com/felipendc
+# I use Arch! btw...
 
 update () {
 
