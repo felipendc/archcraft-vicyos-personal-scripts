@@ -35,12 +35,9 @@ else
 fi
 }
 
-
-
 install_trizen(){
 
 # Unpacking file
-
 rm -Rvf trizen
 tar -xvf $trizen_file
 
@@ -50,18 +47,16 @@ makepkg -s
 sudo pacman -U trizen*.zst --noconfirm
 cd ../
 rm -Rvf trizen
-
 sudo rm -Rv $trizen_file
-# rm -Rvf trizen.tar.gz
+
 }
 
 snapshot(){
 
-# It waits 10 secs and then it downloads the trizen snapshot (PKGBUILD file) 
+# It waits 5 secs and then it downloads the trizen snapshot (PKGBUILD file) 
 # and self stop after the download is finished!
 sleep 5
 curl https://aur.archlinux.org/cgit/aur.git/snapshot/trizen.tar.gz --output trizen.tar.gz
-
 }
 
 trizen(){
@@ -70,14 +65,11 @@ trizen_file="trizen.tar.gz"
 counter=0
 seconds_is=""
 
-
 # Wait until trizen snapshot is downloaded and trigger the trizen installation function (install_trizen)
 if  pacman -Qi trizen &> /dev/null; then
 	echo "Trizen is already installed." 
 	exit
-
 else
-
 	if [ -e "$trizen_file" ]; then
 
 		# Clean up to avoid any conflicts
@@ -111,7 +103,6 @@ else
 			if [ -e "$trizen_file" ]; then
 				echo "Congrats!!! $trizen_file file was downloaded successfully!"
 
-		
 			elif [ "$counter" == 121 ]; then
 				clear
 				echo ""
@@ -120,12 +111,10 @@ else
 				echo "Please, check if your internet speed or your connection and try again." 
 				echo ""
 				exit
-				
 			else
 				echo "Please wait... $trizen_file is being downloaded! $counter$seconds_is"
 			fi
 		done
-		
 	fi
 fi
 wait -n
