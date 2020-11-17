@@ -209,6 +209,7 @@ sudo pacman -S gnome-disk-utility --noconfirm
 # Hplib Gui:
 #trizen -S python-pyqt4 --needed --noconfirm 
 trizen -S python-pyqt5 --needed --noconfirm
+
 trizen -S wget --needed --noconfirm
 trizen -S redshiftgui-bin --needed --noconfirm
 trizen -S python --needed --noconfirm
