@@ -10,15 +10,12 @@
 # Exit immediately if a command exits with a non-zero status.
 set -e
 
-
 update () {
-
 # Sync and refresh pacman database and update the packages
 sudo pacman -Syyu --noconfirm
 }
 
 vicyos_repo () {
-
 # Append vicyos repo
 cat >> /etc/pacman.conf <<- _EOF_
 
@@ -30,7 +27,6 @@ cat >> /etc/pacman.conf <<- _EOF_
 }
 
 add_vicyos_repo () {
-	
 # Check if Vicyos repository already exists. 
 # If it's missing, add it to the pacman.config file.
 repo_get_line=$(grep -E "(vicyos-repo)" /etc/pacman.conf)
@@ -46,7 +42,6 @@ fi
 }
 
 install_trizen(){
-
 # Unpacking file
 rm -Rvf trizen
 tar -xvf $trizen_file
@@ -61,7 +56,6 @@ sudo rm -Rv $trizen_file
 }
 
 snapshot(){
-
 # It waits 5 secs and then it downloads the trizen snapshot (PKGBUILD file) 
 # and self stop after the download is finished!
 sleep 5
@@ -131,7 +125,6 @@ install_trizen
 }
 
 vicyos_polybar(){
-
 original_polybar="$HOME/.config/polybar/launch.sh"
 backup_folder="$HOME/vicyos_backups"
 
@@ -172,7 +165,6 @@ fi
 }
 
 vicyos_zsh(){
-
 # Remove old .zshrc to avoid any conflicts
 # Move vicyos_modified_zshrc to Home folder renamed to .zshrc
 rm -R $HOME/.zshrc
@@ -181,7 +173,6 @@ source $HOME/.zshrc
 }
 
 personal_pkgs(){
-
 ###### Pacman ########
 # fix timezone:
 sudo pacman -S chrony --noconfirm
@@ -230,7 +221,6 @@ trizen -S visual-studio-code-bin --needed --noconfirm
 }
 
 polybar_monitors(){
-
 ###############################################################
 # ONLY FOR TESTING PURPOSE. IT'S STILL IN DEVELOPMENET !!!!!!!
 # It will be soon moved to: "~/.config/openbox/autostart"
