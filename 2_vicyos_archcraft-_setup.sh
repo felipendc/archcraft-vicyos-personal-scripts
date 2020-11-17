@@ -197,17 +197,17 @@ sudo pacman -S python-pip  --noconfirm
 sudo pacman -S curl --noconfirm
 sudo pacman -S simple-scan --noconfirm
 sudo pacman -S arandr --noconfirm
+sudo pacman -S xrandr --noconfirm
 sudo pacman -S hwinfo --noconfirm
 sudo pacman -S firefox --noconfirm
 sudo pacman -S adb --noconfirm
-
+sudo pacman -S gnome-disk-utility --noconfirm
 
 ###### Trizen #######
 
 # Hplib Gui:
 #trizen -S python-pyqt4 --needed --noconfirm 
 trizen -S python-pyqt5 --needed --noconfirm
-
 trizen -S wget --needed --noconfirm
 trizen -S redshiftgui-bin --needed --noconfirm
 trizen -S python --needed --noconfirm
@@ -220,9 +220,30 @@ trizen -S visual-studio-code-bin --needed --noconfirm
 
 }
 
-add_vicyos_repo 
-trizen
-vicyos_polybar
-vicyos_zsh
-personal_pkgs
-update 
+polybar_monitors(){
+
+# Echo which monitors are connected
+# conected_monitor=$(xrandr | grep -E "(HDMI1)" | awk '{ print$1 }') 
+conected_monitor=$(xrandr | grep -E "(HDMI1)" | sed -E 's/(.{15}).+/\1/') 
+
+
+if [ "$conected_monitor" == "HDMI1 connected" ]; then
+	clear
+	echo "Second monitor is connected"
+else
+	clear
+	echo "There is no second monitor connected"
+fi
+
+#| sed -E 's/(.{22}).+/\1.../'
+}
+
+
+# add_vicyos_repo 
+# trizen
+# vicyos_polybar
+# vicyos_zsh
+# personal_pkgs
+# update 
+
+polybar_monitors
