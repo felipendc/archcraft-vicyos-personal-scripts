@@ -240,7 +240,6 @@ else
 	clear
 	echo "There is no second monitor connected"
 fi
-
 }
 
 
