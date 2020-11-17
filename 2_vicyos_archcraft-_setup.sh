@@ -174,6 +174,7 @@ source $HOME/.zshrc
 
 personal_pkgs(){
 ###### Pacman ########
+
 # fix timezone:
 sudo pacman -S chrony --noconfirm
 
