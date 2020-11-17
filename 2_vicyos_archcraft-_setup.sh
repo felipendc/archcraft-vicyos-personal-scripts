@@ -2,9 +2,10 @@
 
 ################################################################
 # Written to be used on my Thinkpad T430 with Archcraft Linux. #
-# Author        :   Vicyos (felipendc)                         #
-# My Github     :   github.com/felipendc                       #
-# Note          :   I use Arch! btw...                         #
+# Desktop Environment   :   Openbox                            #
+# Author                :   Vicyos (felipendc)                 #
+# My Github             :   github.com/felipendc               #
+# Important Note        :   I use Arch! btw... Hahaha!         #
 ################################################################
 
 # Exit immediately if a command exits with a non-zero status.
