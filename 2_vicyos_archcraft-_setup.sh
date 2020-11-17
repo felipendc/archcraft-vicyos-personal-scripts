@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Import icyos_setup_banner.sh
+# Import vicyos_setup_banner.sh
 source ./needed_files/vicyos_banner/vicyos_setup_banner.sh
 
 ################################################################
