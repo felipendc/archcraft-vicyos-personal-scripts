@@ -68,13 +68,11 @@ do
         sleep 1
     fi
 
-#########################################
     if [ "$counter" == 9 ]; then
         v_desktop="${BLUE}Openbox"
         v_author="${GRAY}Vicyos (felipendc)"
         v_github="${GRAY}github.com/felipendc"
         v_note="${GRAY}I use Arch! btw... Hahaha!"
-        
     fi
 
     if [ "$counter" == 8 ]; then
@@ -104,7 +102,6 @@ do
         v_author="${ORANGE}Vicyos (felipendc)"
         v_github="${GREEN}github.com/felipendc"
         v_note="${RED}I use Arch! btw... Hahaha!"
-        
     fi
 
     if [ "$counter" == 4 ]; then
@@ -129,8 +126,6 @@ do
         v_note="${GRAY}I use Arch! btw... Hahaha!"
     fi
 
-
-#########################################
     if [ "$counter" == 1 ]; then
         clear
         counter=" "
@@ -142,4 +137,4 @@ done
 }
 
 loading_banner
-# here_we_go
+
