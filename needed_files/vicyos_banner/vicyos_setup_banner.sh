@@ -19,7 +19,7 @@ RESET="$(printf '\u001b[0m')"
 
 
 ## Banner
-vicyos_banner () {
+vicyos_banner() {
     clear
     cat <<- _EOF_
         ${DARK_GRAY}┌──────────────────────────────────────────────────────────────┐
@@ -35,6 +35,21 @@ vicyos_banner () {
 	_EOF_
 }
 
+here_we_go() {
+    clear
+    cat <<- _EOF_
+        ${DARK_GRAY}┌──────────────────────────────────────────────────────────────┐
+        ${DARK_GRAY}│ ${WHITE}Written to be used on my Thinkpad T430 with Archcraft Linux. ${DARK_GRAY}│
+        ${DARK_GRAY}│                                                              ${DARK_GRAY}│
+        ${DARK_GRAY}│ ${BLUE}Desktop Environment   :   ${GRAY}Openbox                            ${DARK_GRAY}│
+        ${DARK_GRAY}│ ${BLUE}Author                :   ${GRAY}Vicyos (felipendc)                 ${DARK_GRAY}│
+        ${DARK_GRAY}│ ${BLUE}My Github             :   ${GRAY}github.com/felipendc               ${DARK_GRAY}│
+        ${DARK_GRAY}│ ${BLUE}Important Note        :   ${GRAY}I use Arch! btw... Hahaha!         ${DARK_GRAY}│
+        ${DARK_GRAY}│                                                              ${DARK_GRAY}│
+        ${DARK_GRAY}│ ${GREEN}Vicyos personal script will start in: ${RED}Here we go!            ${DARK_GRAY}│
+        ${DARK_GRAY}└──────────────────────────────────────────────────────────────┘
+	_EOF_
+}
 
 loading_banner(){
 
@@ -46,18 +61,144 @@ do
         counter=$((counter-1))
         clear
         vicyos_banner
-        echo "${GRAY}$counter"
         sleep 1
     fi
 
     if [ "$counter" == 1 ]; then
         clear
         counter=" "
-        vicyos_banner
-        echo ""
+        here_we_go
+        sleep 2
         break
     fi
 done
 }
-
+# here_we_go
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
+loading_banner
 loading_banner
