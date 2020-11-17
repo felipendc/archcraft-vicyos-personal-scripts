@@ -234,10 +234,10 @@ conected_monitor=$(xrandr | grep -E "(HDMI1)" | sed -E 's/(.{15}).+/\1/')
 # Set the proper resolution for each monitor and start one polybar for each monitor. 
 # But if HDMI1 isn't connected, boot only one polybar for the the primary monitor.
 if [ "$conected_monitor" == "HDMI1 connected" ]; then
-	clear
+	# clear
 	echo "Second monitor is connected"
 else
-	clear
+	# clear
 	echo "There is no second monitor connected"
 fi
 }
