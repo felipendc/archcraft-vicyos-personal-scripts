@@ -2,6 +2,10 @@
 # github.com/felipendc
 # I use Arch! btw...
 
+# Exit immediately if a command exits with a non-zero status.
+set -e
+
+
 update () {
 
 # Sync and refresh pacman database and update the packages
