@@ -222,7 +222,10 @@ trizen -S visual-studio-code-bin --needed --noconfirm
 
 polybar_monitors(){
 
-# TESTING IT'S STILL IN DEVELOPMENET !!!!!!!
+###############################################################
+# ONLY FOR TESTING PURPOSE. IT'S STILL IN DEVELOPMENET !!!!!!!
+# It will be soon moved to: "~/.config/openbox/autostart"
+###############################################################
 
 # If HDMI1 is connected, it will print (echo) only "HDMI1 connected"
 conected_monitor=$(xrandr | grep -E "(HDMI1)" | sed -E 's/(.{15}).+/\1/') 
