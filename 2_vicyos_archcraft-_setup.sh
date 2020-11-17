@@ -244,12 +244,11 @@ else
 fi
 }
 
-
+# loading_banner
 # add_vicyos_repo 
 # trizen
 # vicyos_polybar
 # vicyos_zsh
 # personal_pkgs
 # update 
-
 polybar_monitors
