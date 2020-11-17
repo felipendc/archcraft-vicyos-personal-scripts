@@ -2,9 +2,9 @@
 
 ################################################################
 # Written to be used on my Thinkpad T430 with Archcraft Linux. #
-# Author 		: 	Vicyos (felipendc)						   #
-# My Github 	: 	github.com/felipendc					   #
-# Note			: 	I use Arch! btw..						   #
+# Author        :   Vicyos (felipendc)                         #
+# My Github     :   github.com/felipendc                       #
+# Note          :   I use Arch! btw...                         #
 ################################################################
 
 # Exit immediately if a command exits with a non-zero status.
