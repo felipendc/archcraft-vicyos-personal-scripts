@@ -222,11 +222,14 @@ trizen -S visual-studio-code-bin --needed --noconfirm
 
 polybar_monitors(){
 
-# Echo which monitors are connected
-# conected_monitor=$(xrandr | grep -E "(HDMI1)" | awk '{ print$1 }') 
+# TESTING IT'S STILL IN DEVELOPMENET !!!!!!!
+
+# If HDMI1 is connected, it will print (echo) only "HDMI1 connected"
 conected_monitor=$(xrandr | grep -E "(HDMI1)" | sed -E 's/(.{15}).+/\1/') 
 
-
+# Check if HDMI1 is connected, if so...
+# Set the proper resolution for each monitor and start one polybar for each monitor. 
+# But if HDMI1 isn't connected, boot only one polybar for the the primary monitor.
 if [ "$conected_monitor" == "HDMI1 connected" ]; then
 	clear
 	echo "Second monitor is connected"
@@ -235,7 +238,6 @@ else
 	echo "There is no second monitor connected"
 fi
 
-#| sed -E 's/(.{22}).+/\1.../'
 }
 
 
