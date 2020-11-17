@@ -131,9 +131,8 @@ do
         counter=" "
         here_we_go
         sleep 2
+        echo "${GRAY}"
         break
     fi
 done
 }
-
-loading_banner

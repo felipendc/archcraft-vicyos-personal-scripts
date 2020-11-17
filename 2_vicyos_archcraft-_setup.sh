@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Import icyos_setup_banner.sh
+source ./needed_files/vicyos_banner/vicyos_setup_banner.sh
+
 ################################################################
 # Written to be used on my Thinkpad T430 with Archcraft Linux. #
 # Desktop Environment   :   Openbox                            #
@@ -244,11 +247,11 @@ else
 fi
 }
 
-# loading_banner
+loading_banner
 # add_vicyos_repo 
 # trizen
 # vicyos_polybar
 # vicyos_zsh
 # personal_pkgs
-# update 
-polybar_monitors
+update 
+# polybar_monitors
