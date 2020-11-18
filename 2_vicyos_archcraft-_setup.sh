@@ -35,11 +35,11 @@ repo_get_line=$(grep -E "(vicyos-repo)" /etc/pacman.conf)
 repo_vicyos_line="[vicyos-repo]"
 
 if [ "$repo_get_line" == "$repo_vicyos_line" ]; then
-    echo "Vicyos repository already exists in /etc/pacman.conf"
+    echo "Vicyos repository already exists."
 else
 	# Add vicyos-repo
 	vicyos_repo
-	echo "Vicyos repository was added successfully in /etc/pacman.conf"
+	echo "Vicyos repository was added successfully."
 fi
 }
 
