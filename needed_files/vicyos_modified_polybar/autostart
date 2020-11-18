@@ -39,15 +39,11 @@ init_as_second(){
 ## Restore Wallpaper
 nitrogen --restore
 
-
-
 ## xfce4-settings daemon
 xfsettingsd &
 
 ## Start Compositing Manager
 exec compton -b &
-
-
 
 
 ## Start Music Player Daemon
@@ -74,12 +70,7 @@ issue_tracker.sh
 
 ## Launch Plank
 exec plank &
-killall plank
-exec plank &
-killall plank
-exec plank &
-killall plank
-exec plank &
+
 }
 
 init_as_second
