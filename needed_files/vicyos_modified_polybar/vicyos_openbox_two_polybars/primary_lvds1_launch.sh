@@ -7,4 +7,4 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch the bar
-polybar main -c "$HOME"/.config/polybar/default/config.ini &
+polybar main1 -c "$HOME"/.config/polybar/vicyos_openbox_two_polybars/config_primary.ini &
