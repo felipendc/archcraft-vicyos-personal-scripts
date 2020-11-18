@@ -116,7 +116,6 @@ do
         v_note="${ORANGE}I use Arch! btw... Hahaha!"
     fi
 
-
     if [ "$counter" == 2 ]; then
         v_desktop="${GRAY}Openbox"
         v_author="${GRAY}Vicyos (felipendc)"
