@@ -13,8 +13,9 @@ source ./needed_files/vicyos_banner/vicyos_setup_banner.sh
 
 
 update () {
-# Sync and refresh pacman database and update the packages
+# Sync and refresh pacman database and update the all of the packages
 sudo pacman -Syyu --noconfirm
+yay -Syu --noconfirm
 }
 
 vicyos_repo () {
@@ -200,55 +201,11 @@ else
 fi
 }
 
-personal_pkgs(){
-###### Pacman ########
 
-# fix timezone:
-sudo pacman -S chrony --noconfirm
-
-# Davinci Resolve fix:
-sudo pacman -S ocl-icd --noconfirm
-
-sudo pacman -S gnome-system-monitor --noconfirm
-sudo pacman -S playerctl --noconfirm
-sudo pacman -S gimp --noconfirm
-sudo pacman -S inkscape --noconfirm
-sudo pacman -S qbittorrent --noconfirm
-sudo pacman -S vlc --noconfirm
-sudo pacman -S youtube-dl --noconfirm
-sudo pacman -S clementine --noconfirm
-sudo pacman -S krita --noconfirm
-sudo pacman -S gnome-calculator --noconfirm
-sudo pacman -S clipgrab --noconfirm
-sudo pacman -S pinta --noconfirm
-sudo pacman -S filezilla --noconfirm
-sudo pacman -S python-pip  --noconfirm
-sudo pacman -S curl --noconfirm
-sudo pacman -S simple-scan --noconfirm
-sudo pacman -S arandr --noconfirm
-sudo pacman -S hwinfo --noconfirm
-sudo pacman -S firefox --noconfirm
-sudo pacman -S adb --noconfirm
-sudo pacman -S gnome-disk-utility --noconfirm
-
-###### Trizen #######
-
-# Hplib Gui: 
-trizen -S python-pyqt5 --needed --noconfirm
-
-trizen -S wget --needed --noconfirm
-trizen -S redshiftgui-bin --needed --noconfirm
-trizen -S python --needed --noconfirm
-trizen -S google-chrome --needed --noconfirm
-trizen -S visual-studio-code-bin --needed --noconfirm
-trizen -S android-studio --needed --noconfirm
-}
-
-# loading_banner
-# reset_color
-# add_vicyos_repo 
-# trizen
+loading_banner
+reset_color
+add_vicyos_repo 
+trizen
 vicyos_polybar_p1
-# vicyos_zsh
-# personal_pkgs
-# update 
+vicyos_zsh
+update 
