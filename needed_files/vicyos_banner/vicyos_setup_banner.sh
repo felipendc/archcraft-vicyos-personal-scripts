@@ -132,6 +132,7 @@ do
     fi
 done
 
+# Reset the command lines color
 tput sgr0
 tput op
 }
