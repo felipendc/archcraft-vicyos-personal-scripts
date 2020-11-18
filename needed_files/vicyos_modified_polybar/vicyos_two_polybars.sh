@@ -10,7 +10,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch Polybar for primary monitor LVDS1
 bash "$HOME"/.config/polybar/"$STYLE"/primary_lvds1_launch.sh
-sleep 2
+
 # Launch Polybar for primary monitor HDMI
 bash "$HOME"/.config/polybar/"$STYLE"/secondary_hdmi_launch.sh
 
