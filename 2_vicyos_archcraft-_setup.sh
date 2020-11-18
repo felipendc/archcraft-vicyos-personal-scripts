@@ -130,13 +130,16 @@ wait -n
 install_trizen
 }
 
-vicyos_polybar(){
-original_polybar="$HOME/.config/polybar/launch.sh"
+vicyos_polybar_p1(){
+original_polybar="$HOME/.config/polybar/vicyos_two_polybars.sh"
 backup_folder="$HOME/vicyos_backups"
 
+# Check if vicyos Two Polybars are already installed
 if [ -e "$original_polybar" ]; then
 
-	# Make a backup of the polybar folder to "~/vicyos_backups"
+	echo "Vicyos Two Polybars are already installed"
+else
+# Make a backup of the polybar folder to "~/vicyos_backups"
 	zip polybar_backup.zip -r ~/.config/polybar
 	if [ -d "$backup_folder" ]; then
 		rm -R $backup_folder
@@ -149,15 +152,22 @@ if [ -e "$original_polybar" ]; then
 	# Make a backup of the autostart file to "~/vicyos_backups"
 	# Set the right polybar ".sh" file to autostart
 	cp -r ~/.config/openbox/autostart $backup_folder
-	sed -i '/sh ~\/.config\/polybar\/launch.sh/c\sh ~\/.config\/polybar\/vicyos_modified_polybar.sh' ~/.config/openbox/autostart
-    
+
+	# Delete this two lines down below from autostart file to avoid future conflicts:
+	# Launch Polybar 
+	# sh ~/.config/polybar/launch.sh
+	sed -i '/## Launch Polybar/c\' ~/.config/openbox/autostart
+	sed -i '/sh ~\/.config\/polybar\/launch.sh/c\' ~/.config/openbox/autostart
+
+
 	# Remove the polybar folder to avoid any conflicts
 	# Copy the vicyos modified polybar files to ~/.config/polybar
 	rm -R ~/.config/polybar
 	cp -r needed_files/vicyos_modified_polybar ~/.config/polybar
 
-	# Make some polybar files executable
-	chmod +x ~/.config/polybar/vicyos_modified_polybar.sh
+	# Make some polybar files executable 
+	chmod +x ~/.config/polybar/default_launch.sh
+	chmod +x ~/.config/polybar/vicyos_two_polybars.sh
 	chmod +x ~/.config/polybar/wave/launch.sh
 	chmod +x ~/.config/polybar/spark/launch.sh
 	chmod +x ~/.config/polybar/manhattan/launch.sh
@@ -165,8 +175,8 @@ if [ -e "$original_polybar" ]; then
 	chmod +x ~/.config/polybar/forest/launch.sh
 	chmod +x ~/.config/polybar/default/launch.sh
 	chmod +x ~/.config/polybar/beach/launch.sh	
-else
-	echo "Vicyos modified Polybar is already installed"
+	chmod +x ~/.config/polybar/vicyos_openbox_two_polybars/secondary_hdmi_launch.sh
+	chmod +x ~/.config/polybar/vicyos_openbox_two_polybars/primary_lvds1_launch.sh
 fi
 }
 
@@ -236,7 +246,7 @@ trizen -S visual-studio-code-bin --needed --noconfirm
 trizen -S android-studio --needed --noconfirm
 }
 
-polybar_monitors(){
+vicyos_polybar_p2(){
 ###############################################################
 # ONLY FOR TESTING PURPOSE. IT'S STILL IN DEVELOPMENET !!!!!!!
 # It will be soon moved to: "~/.config/openbox/autostart"
@@ -250,19 +260,22 @@ conected_monitor=$(xrandr | grep -E "(HDMI1)" | sed -E 's/(.{15}).+/\1/')
 # But if HDMI1 isn't connected, boot only one polybar for the the primary monitor.
 if [ "$conected_monitor" == "HDMI1 connected" ]; then
 	# clear
-	echo "Second monitor is connected"
+	# echo "Second monitor is connected"
+	xrandr --output LVDS1 --primary --mode 1366x768 --pos 271x0 --rotate normal --output DP1 --off --output DP2 --off --output DP3 --off --output HDMI1 --mode 1920x1080 --pos 1637x0 --rotate normal --output HDMI2 --off --output HDMI3 --off --output VGA1 --off --output VIRTUAL1 --off
+	sleep 3
+	$HOME/.config/polybar/vicyos_two_polybars.sh
 else
 	# clear
-	echo "There is no second monitor connected"
+	# echo "There is no second monitor connected"
+	$HOME/.config/polybar/default_launch.sh
 fi
 }
 
-loading_banner
+# loading_banner
 # reset_color
 # add_vicyos_repo 
 # trizen
-# vicyos_polybar
+vicyos_polybar_p1
 # vicyos_zsh
 # personal_pkgs
-update 
-# polybar_monitors
+# update 
