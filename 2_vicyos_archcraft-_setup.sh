@@ -153,17 +153,15 @@ else
 	# Set the right polybar ".sh" file to autostart
 	cp -r ~/.config/openbox/autostart $backup_folder
 
-	# Delete this two lines down below from autostart file to avoid future conflicts:
-	# Launch Polybar 
-	# sh ~/.config/polybar/launch.sh
-	sed -i '/## Launch Polybar/c\' ~/.config/openbox/autostart
-	sed -i '/sh ~\/.config\/polybar\/launch.sh/c\' ~/.config/openbox/autostart
-
-
 	# Remove the polybar folder to avoid any conflicts
 	# Copy the vicyos modified polybar files to ~/.config/polybar
 	rm -R ~/.config/polybar
 	cp -r needed_files/vicyos_modified_polybar ~/.config/polybar
+	
+	# Delete "autostart" file in "~/.config/openbox/" to avoid any conflicts
+	# Copy a modified "autostart" file to "~/.config/openbox/"
+	rm -Rvf $HOME/.config/openbox/autostart
+	mv $HOME/.config/polybar/autostart $HOME/.config/openbox
 
 	# Make some polybar files executable 
 	chmod +x ~/.config/polybar/default_launch.sh
@@ -244,38 +242,6 @@ trizen -S python --needed --noconfirm
 trizen -S google-chrome --needed --noconfirm
 trizen -S visual-studio-code-bin --needed --noconfirm
 trizen -S android-studio --needed --noconfirm
-}
-
-vicyos_polybar_p2(){
-###############################################################
-# ONLY FOR TESTING PURPOSE. IT'S STILL IN DEVELOPMENET !!!!!!!
-# It will be soon moved to: "~/.config/openbox/autostart"
-###############################################################
-
-# If HDMI1 is connected, it will print (echo) only "HDMI1 connected"
-conected_monitor=$(xrandr | grep -E "(HDMI1)" | sed -E 's/(.{15}).+/\1/') 
-
-# Check if HDMI1 is connected, if so...
-# Set the proper resolution for each monitor and start one polybar for each monitor. 
-# But if HDMI1 isn't connected, boot only one polybar for the the primary monitor.
-if [ "$conected_monitor" == "HDMI1 connected" ]; then
-	# clear
-	# echo "Second monitor is connected"
-
-	# This is for my LG-TV 
-	#xrandr --output LVDS1 --primary --mode 1366x768 --pos 271x0 --rotate normal --output DP1 --off --output DP2 --off --output DP3 --off --output HDMI1 --mode 1920x1080 --pos 1637x0 --rotate normal --output HDMI2 --off --output HDMI3 --off --output VGA1 --off --output VIRTUAL1 --off
-	sleep 3
-
-	# This is for my SAMSUNG MONITOR 
-	xrandr --output LVDS1 --mode 1366x768 --pos 1920x543 --rotate normal --output DP1 --off --output DP2 --off --output DP3 --off --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI2 --off --output HDMI3 --off --output VGA1 --off --output VIRTUAL1 --off
-
-
-	$HOME/.config/polybar/vicyos_two_polybars.sh
-else
-	# clear
-	# echo "There is no second monitor connected"
-	$HOME/.config/polybar/default_launch.sh
-fi
 }
 
 # loading_banner
