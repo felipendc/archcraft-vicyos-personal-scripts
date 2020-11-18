@@ -123,7 +123,7 @@ else
 	fi
 fi
 
-# Wait for each specified process to complete and return its termination status.
+# Wait for each specified process to complete and return its termination status
 wait -n
 
 # Call install_trizen function
