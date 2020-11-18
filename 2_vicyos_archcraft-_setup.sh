@@ -243,6 +243,7 @@ fi
 
 loading_banner
 reset_color
+
 # add_vicyos_repo 
 # trizen
 # vicyos_polybar
