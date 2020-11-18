@@ -202,7 +202,6 @@ sudo pacman -S python-pip  --noconfirm
 sudo pacman -S curl --noconfirm
 sudo pacman -S simple-scan --noconfirm
 sudo pacman -S arandr --noconfirm
-sudo pacman -S xrandr --noconfirm
 sudo pacman -S hwinfo --noconfirm
 sudo pacman -S firefox --noconfirm
 sudo pacman -S adb --noconfirm
@@ -210,8 +209,7 @@ sudo pacman -S gnome-disk-utility --noconfirm
 
 ###### Trizen #######
 
-# Hplib Gui:
-#trizen -S python-pyqt4 --needed --noconfirm 
+# Hplib Gui: 
 trizen -S python-pyqt5 --needed --noconfirm
 
 trizen -S wget --needed --noconfirm
@@ -219,11 +217,7 @@ trizen -S redshiftgui-bin --needed --noconfirm
 trizen -S python --needed --noconfirm
 trizen -S google-chrome --needed --noconfirm
 trizen -S visual-studio-code-bin --needed --noconfirm
-# trizen -S android-studio --needed --noconfirm
-# trizen -S flutter --needed --noconfirm
-# sudo flutter
-# sudo flutter doctor
-
+trizen -S android-studio --needed --noconfirm
 }
 
 polybar_monitors(){
@@ -248,10 +242,11 @@ fi
 }
 
 loading_banner
+reset_color
 # add_vicyos_repo 
 # trizen
 # vicyos_polybar
 # vicyos_zsh
-# personal_pkgs
+personal_pkgs
 update 
 # polybar_monitors

@@ -17,7 +17,6 @@ MAGENTABG="$(printf '\033[45m')"  CYANBG="$(printf '\033[46m')"  WHITEBG="$(prin
 GRAY="$(printf '\e[0;39m')" DARK_GRAY="$(printf '\e[1;30m')" LIGHT_CYAN="$(printf '\e[1;36m')"
 RESET="$(printf '\u001b[0m')"
 
-
 ## Banner
 vicyos_banner() {
     clear
@@ -52,7 +51,6 @@ here_we_go() {
 }
 
 loading_banner(){
-
 counter=10
 v_desktop="${GRAY}Openbox"
 v_author="${GRAY}Vicyos (felipendc)"
@@ -131,8 +129,13 @@ do
         counter=" "
         here_we_go
         sleep 2
-        echo "${GRAY}"
         break
     fi
 done
+}
+
+# Reset terminal colors
+reset_color() {
+	tput sgr0   # reset attributes
+	tput op     # reset color
 }
