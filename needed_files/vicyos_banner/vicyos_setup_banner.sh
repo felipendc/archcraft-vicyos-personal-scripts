@@ -131,10 +131,8 @@ do
         break
     fi
 done
+
+tput sgr0
+tput op
 }
 
-# Reset terminal colors
-reset_color() {
-	tput sgr0   # reset attributes
-	tput op     # reset color
-}

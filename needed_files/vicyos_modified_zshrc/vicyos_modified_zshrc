@@ -1,3 +1,5 @@
+# vicyos personal zshrc
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -116,7 +118,6 @@ alias ga='git add'
 alias gc='git commit -m'
 alias gp='git push origin master'
 
-
 export PATH="$PATH:/home/vicyos/flutter/bin"
 export PATH="$PATH:/home/vicyos/Android/Sdk/platform-tools"
 
@@ -161,13 +162,11 @@ alias yta-mp3="youtube-dl --extract-audio --audio-format mp3 "
 alias yta-opus="youtube-dl --extract-audio --audio-format opus "
 alias yta-vorbis="youtube-dl --extract-audio --audio-format vorbis "
 alias yta-wav="youtube-dl --extract-audio --audio-format wav "
-
 alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 
 #Recent Installed Packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | nl"
-
 
 #Cleanup orphaned packages
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
@@ -175,17 +174,13 @@ alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 #get the error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
 
-#youtube-dl
-
-######## I modded it a little bit to suit my needs ^.^/)  #######
-
+######## youtube-dl modified a little bit to suit my needs  #######
 alias ytmp4='youtube-dl --recode-video mp4' # Download YT video and format it to MP4 
 alias ytlist='youtube-dl -xcit' # Download a YT playlist
 alias mp3list='youtube-dl -xcit --audio-format mp3' # Download a YT playslist and format it to MP3
 alias mp4list='youtube-dl -cit --recode-video mp4' # - Download a YT playslist and format it to MP4
 alias ytmp3="youtube-dl --extract-audio --audio-format mp3 " # Download a YT video and format it to MP3
 alias yt='youtube-dl' # Download a YT video without formating it
-
 
 alias yta-aac="youtube-dl --extract-audio --audio-format aac "
 alias yta-best="youtube-dl --extract-audio --audio-format best "
@@ -198,7 +193,6 @@ alias yta-wav="youtube-dl --extract-audio --audio-format wav "
 alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 
 ##########  Brazillian Portuguese alias  ########## 
-
 alias kernel="cat /proc/version"
 alias desligar="sudo shutdown now"
 alias reiniciar="sudo reboot"

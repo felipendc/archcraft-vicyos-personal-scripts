@@ -11,8 +11,6 @@ source ./needed_files/vicyos_banner/vicyos_setup_banner.sh
 # Important Note        :   I use Arch! btw... Hahaha!         #
 ################################################################
 
-# Exit immediately if a command exits with a non-zero status.
-set -e
 
 update () {
 # Sync and refresh pacman database and update the packages
@@ -37,11 +35,11 @@ repo_get_line=$(grep -E "(vicyos-repo)" /etc/pacman.conf)
 repo_vicyos_line="[vicyos-repo]"
 
 if [ "$repo_get_line" == "$repo_vicyos_line" ]; then
-    echo "Vicyos repository already exists."
+    echo "Vicyos repository already exists in /etc/pacman.conf"
 else
 	# Add vicyos-repo
 	vicyos_repo
-	echo "Vicyos repository was added successfully."
+	echo "Vicyos repository was added successfully in /etc/pacman.conf"
 fi
 }
 
@@ -169,11 +167,25 @@ fi
 }
 
 vicyos_zsh(){
-# Remove old .zshrc to avoid any conflicts
-# Move vicyos_modified_zshrc to Home folder renamed to .zshrc
-rm -R $HOME/.zshrc
-cp -r needed_files/vicyos_modified_zshrc/vicyos_modified_zshrc $HOME/.zshrc
-source $HOME/.zshrc
+# Check if "vicyos personal zshrc" line exist in "~/.zshrc"
+# If this line "vicyos personal zshrc" doesn't exist in "~/.zshrc",
+# the "zsh_get_line" variable value will be null
+zsh_get_line=$(grep -E "(# vicyos personal zshrc)" $HOME/.zshrc)
+
+# Check if "zsh_get_line" variable is null
+if [ -z "$zsh_get_line" ]; then
+
+	# Remove old .zshrc to avoid any conflicts
+	# Move vicyos_modified_zshrc to Home folder renamed to .zshrc
+	# Refresh .zshrc
+	rm -R $HOME/.zshrc
+	cp -r needed_files/vicyos_modified_zshrc/vicyos_modified_zshrc $HOME/.zshrc
+	source $HOME/.zshrc
+	echo "Vicyos personal .zshrc was added successfully."
+else
+	clear
+    echo "Vicyos personal .zshrc already exists."
+fi
 }
 
 personal_pkgs(){
@@ -242,12 +254,11 @@ fi
 }
 
 loading_banner
-reset_color
-
+# reset_color
 # add_vicyos_repo 
 # trizen
 # vicyos_polybar
 # vicyos_zsh
-personal_pkgs
+# personal_pkgs
 update 
 # polybar_monitors
