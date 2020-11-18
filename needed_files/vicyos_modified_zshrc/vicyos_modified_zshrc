@@ -199,6 +199,12 @@ alias reiniciar="sudo reboot"
 alias atualizar='sudo pacman -Syu'
 alias att='sudo pacman -Syu'
 
+########## Alias for Polybar ##########
+alias killpoly='killall polybar'
+alias onepoly='sh $HOME/.config/polybar/vicyos_two_polybars.sh'
+alias twopoly='sh $HOME/.config/polybar/default_launch.sh'
+
+
 ############ CCACHE to compile android custom roms! ############
 #export USE_CCACHE=1
 #export CCACHE_DIR="${HOME}/.ccache"
