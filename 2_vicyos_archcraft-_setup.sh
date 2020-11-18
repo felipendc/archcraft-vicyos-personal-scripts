@@ -261,8 +261,15 @@ conected_monitor=$(xrandr | grep -E "(HDMI1)" | sed -E 's/(.{15}).+/\1/')
 if [ "$conected_monitor" == "HDMI1 connected" ]; then
 	# clear
 	# echo "Second monitor is connected"
-	xrandr --output LVDS1 --primary --mode 1366x768 --pos 271x0 --rotate normal --output DP1 --off --output DP2 --off --output DP3 --off --output HDMI1 --mode 1920x1080 --pos 1637x0 --rotate normal --output HDMI2 --off --output HDMI3 --off --output VGA1 --off --output VIRTUAL1 --off
+
+	# This is for my LG-TV 
+	#xrandr --output LVDS1 --primary --mode 1366x768 --pos 271x0 --rotate normal --output DP1 --off --output DP2 --off --output DP3 --off --output HDMI1 --mode 1920x1080 --pos 1637x0 --rotate normal --output HDMI2 --off --output HDMI3 --off --output VGA1 --off --output VIRTUAL1 --off
 	sleep 3
+
+	# This is for my SAMSUNG MONITOR 
+	xrandr --output LVDS1 --mode 1366x768 --pos 1920x543 --rotate normal --output DP1 --off --output DP2 --off --output DP3 --off --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI2 --off --output HDMI3 --off --output VGA1 --off --output VIRTUAL1 --off
+
+
 	$HOME/.config/polybar/vicyos_two_polybars.sh
 else
 	# clear
