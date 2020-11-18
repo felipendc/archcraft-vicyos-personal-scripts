@@ -126,7 +126,7 @@ fi
 # Wait for each specified process to complete and return its termination status.
 wait -n
 
-# call install_trizen function
+# Call install_trizen function
 install_trizen
 }
 
