@@ -157,7 +157,6 @@ trizen -S python --needed --noconfirm
 trizen -S google-chrome --needed --noconfirm
 trizen -S visual-studio-code-bin --needed --noconfirm
 trizen -S android-studio --needed --noconfirm
-trizen -S bluetooth-autoconnect --needed --noconfirm
 }
 
 reboot_os(){
