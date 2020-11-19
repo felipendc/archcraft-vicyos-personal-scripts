@@ -7,4 +7,4 @@
 # while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch the bar
-polybar main2 -c "$HOME"/.config/polybar/vicyos_openbox_two_polybars/config_secondary.ini &
+polybar main2 -c $HOME/.config/polybar/vicyos_openbox_two_polybars/config_secondary.ini &
