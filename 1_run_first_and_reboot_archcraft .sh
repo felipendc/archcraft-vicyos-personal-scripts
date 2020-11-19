@@ -147,6 +147,11 @@ sudo pacman -S perl-lwp-protocol-https --noconfirm
 sudo pacman -S perl-term-readline-gnu --noconfirm
 sudo pacman -S hplip --noconfirm
 
+# Bluetooth
+sudo pacman -S gnome-bluetooth --noconfirm
+sudo pacman -S gnome-control-center --noconfirm
+sudo pacman -S blueberry --needed
+
 ###### Trizen #######
 
 # Hplib Gui: 
