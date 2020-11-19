@@ -129,10 +129,6 @@ fi
 bindkey -v
 neofetch
 
-# Delete all the files from the Trash 
-alias trash='cd ~/.local/share/Trash'
-alias cleartrash='sudo   rm -rf ~/.local/share/Trash/*'
-
 # update the packages with pacman and yay
 alias upall="sudo pacman -Syyu --noconfirm && yay -Syu --noconfirm"
 alias update='sudo pacman -Syyu'
@@ -217,6 +213,10 @@ alias 2tray-on="sed -i '/tray-position =/c\tray-position = right' ~/.config/poly
 # System-Tray alias for when one monitor is connected
 alias 1tray-off="sed -i '/tray-position =/c\tray-position = none' ~/.config/polybar/default/config.ini && bash ~/.config/polybar/polybar/default_launch.sh"
 alias 1tray-on="sed -i '/tray-position =/c\tray-position = right' ~/.config/polybar/default/config.ini && bash ~/.config/polybar/polybar/default_launch.sh"
+
+# Delete all the files from the Trash 
+alias trash='cd ~/.local/share/Trash'
+alias cleartrash='sudo   rm -rf ~/.local/share/Trash/*'
 
 ############ CCACHE to compile android custom roms! ############
 #export USE_CCACHE=1
