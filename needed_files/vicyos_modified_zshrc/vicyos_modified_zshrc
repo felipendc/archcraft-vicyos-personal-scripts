@@ -216,7 +216,7 @@ alias 1tray-on="sed -i '/tray-position =/c\tray-position = right' ~/.config/poly
 
 # Delete all the files from the Trash 
 alias trash='cd ~/.local/share/Trash'
-alias cleartrash='sudo   rm -rf ~/.local/share/Trash/*'
+alias cleartrash='sudo   rm -rvf ~/.local/share/Trash/*'
 
 ############ CCACHE to compile android custom roms! ############
 #export USE_CCACHE=1
