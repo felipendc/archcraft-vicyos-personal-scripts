@@ -1,0 +1,63 @@
+vicyos_polybar_p2(){
+# If HDMI1 is connected, it will print (echo) only "HDMI1 connected"
+conected_monitor=$(xrandr | grep -E "(HDMI1)" | sed -E 's/(.{15}).+/\1/') 
+
+# Check if HDMI1 is connected, if so...
+# Set the proper resolution for each monitor and start one polybar for each monitor. 
+# But if HDMI1 isn't connected, boot only one polybar for the the primary monitor.
+if [ "$conected_monitor" == "HDMI1 connected" ]; then
+
+	# echo "Second monitor is connected"
+
+	# xrandr settings for LVDS1 and HDMI1  
+	xrandr --output LVDS1 --primary --mode 1366x768 --pos 1920x312 --rotate normal --output DP1 --off --output DP2 --off --output DP3 --off --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI2 --off --output HDMI3 --off --output VGA1 --off --output VIRTUAL1 --off
+
+	sh $HOME/.config/polybar/vicyos_two_polybars.sh
+else
+	# echo "There is no second monitor connected"
+	sh $HOME/.config/polybar/default_launch.sh
+fi
+}
+
+vicyos_polybar_p2
+
+
+init_as_second(){
+## Restore Wallpaper
+nitrogen --restore
+
+## xfce4-settings daemon
+xfsettingsd &
+
+## Start Compositing Manager
+exec compton -b &
+
+
+## Start Music Player Daemon
+exec mpd &
+
+## Notification Daemon
+exec dunst &
+
+## Thunar Daemon
+exec thunar --daemon &
+
+## Enable Super Keys For Menu
+ksuperkey -e 'Super_L=Alt_L|F1' &
+ksuperkey -e 'Super_R=Alt_L|F1' &
+
+## Enable power management
+xfce4-power-manager &
+
+## Getting Started
+gs_run_once.sh
+
+## Issue Tracker (Don't Remove IT)
+issue_tracker.sh
+
+## Launch Plank
+exec plank &
+
+}
+
+init_as_second
