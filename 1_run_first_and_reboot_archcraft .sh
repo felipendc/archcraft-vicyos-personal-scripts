@@ -145,6 +145,7 @@ sudo pacman -S perl-json --noconfirm
 sudo pacman -S perl-data-dump --noconfirm
 sudo pacman -S perl-lwp-protocol-https --noconfirm
 sudo pacman -S perl-term-readline-gnu --noconfirm
+sudo pacman -S hplip --noconfirm
 
 ###### Trizen #######
 
