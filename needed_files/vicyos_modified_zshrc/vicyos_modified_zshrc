@@ -210,11 +210,11 @@ alias 2poly='sh $HOME/.config/polybar/vicyos_two_polybars.sh'
 alias 1poly='sh $HOME/.config/polybar/default_launch.sh'
 alias rzsh='source ~/.zshrc'
 
-# System-Tray for when two monitors are connected
+# System-Tray alias for when two monitors are connected
 alias 2tray-off="sed -i '/tray-position =/c\tray-position = none' ~/.config/polybar/vicyos_openbox_two_polybars/config_primary.ini && bash ~/.config/polybar/vicyos_two_polybars.sh"
 alias 2tray-on="sed -i '/tray-position =/c\tray-position = right' ~/.config/polybar/vicyos_openbox_two_polybars/config_primary.ini && bash ~/.config/polybar/vicyos_two_polybars.sh"
 
-# System-Tray for when one monitor is connected
+# System-Tray alias for when one monitor is connected
 alias 1tray-off="sed -i '/tray-position =/c\tray-position = none' ~/.config/polybar/default/config.ini && bash ~/.config/polybar/polybar/default_launch.sh"
 alias 1tray-on="sed -i '/tray-position =/c\tray-position = right' ~/.config/polybar/default/config.ini && bash ~/.config/polybar/polybar/default_launch.sh"
 
