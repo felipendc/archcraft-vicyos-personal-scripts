@@ -158,6 +158,7 @@ trizen -S google-chrome --needed --noconfirm
 trizen -S visual-studio-code-bin --needed --noconfirm
 trizen -S android-studio --needed --noconfirm
 trizen -S onlyoffice-bin --needed --noconfirm
+trizen -S kdenlive --needed --noconfirm
 }
 
 reboot_os(){
