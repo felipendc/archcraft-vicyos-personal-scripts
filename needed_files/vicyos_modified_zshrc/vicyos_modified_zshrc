@@ -205,6 +205,7 @@ alias killpoly='killall polybar'
 alias 2poly='sh $HOME/.config/polybar/vicyos_two_polybars.sh'
 alias 1poly='sh $HOME/.config/polybar/default_launch.sh'
 alias rzsh='source ~/.zshrc'
+alias openzsh='code ~/.zshrc'
 
 # System-Tray alias for when two monitors are connected
 alias 2tray-off="sed -i '/tray-position =/c\tray-position = none' ~/.config/polybar/vicyos_openbox_two_polybars/config_primary.ini && bash ~/.config/polybar/vicyos_two_polybars.sh"
