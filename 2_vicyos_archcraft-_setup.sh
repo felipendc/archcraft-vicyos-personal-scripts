@@ -202,10 +202,10 @@ fi
 }
 
 
-# loading_banner
-# reset_color
-# add_vicyos_repo 
-# trizen
+loading_banner
+reset_color
+add_vicyos_repo 
+trizen
 vicyos_polybar_p1
-# vicyos_zsh
-# update 
+vicyos_zsh
+update 
