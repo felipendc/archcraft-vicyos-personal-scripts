@@ -45,13 +45,13 @@ fi
 }
 
 vicyos_polybar_desktop(){
-original_polybar="$HOME/.config/polybar/vicyos_two_polybars.sh"
+original_polybar="$HOME/.config/polybar/default_launch.sh"
 backup_folder="$HOME/vicyos_backups"
 
 # Check if vicyos Two Polybars are already installed
 if [ -e "$original_polybar" ]; then
 
-	echo "Vicyos Two Polybars are already installed"
+	echo "Vicyos Polybar for Desktop is already installed"
 else
 # Make a backup of the polybar folder to "~/vicyos_backups"
 	zip polybar_backup.zip -r ~/.config/polybar
@@ -70,7 +70,7 @@ else
 	# Remove the polybar folder to avoid any conflicts
 	# Copy the vicyos modified polybar files to ~/.config/polybar
 	rm -R ~/.config/polybar
-	cp -r needed_files/vicyos_modified_polybar ~/.config/polybar
+	cp -r needed_files/vicyos_modified_polybar_desktop ~/.config/polybar
 	
 	# Delete "autostart" file in "~/.config/openbox/" to avoid any conflicts
 	# Copy a modified "autostart" file to "~/.config/openbox/"
@@ -79,7 +79,6 @@ else
 
 	# Make some polybar files executable 
 	chmod +x ~/.config/polybar/default_launch.sh
-	chmod +x ~/.config/polybar/vicyos_two_polybars.sh
 	chmod +x ~/.config/polybar/wave/launch.sh
 	chmod +x ~/.config/polybar/spark/launch.sh
 	chmod +x ~/.config/polybar/manhattan/launch.sh
@@ -87,8 +86,6 @@ else
 	chmod +x ~/.config/polybar/forest/launch.sh
 	chmod +x ~/.config/polybar/default/launch.sh
 	chmod +x ~/.config/polybar/beach/launch.sh	
-	chmod +x ~/.config/polybar/vicyos_openbox_two_polybars/secondary_hdmi_launch.sh
-	chmod +x ~/.config/polybar/vicyos_openbox_two_polybars/primary_lvds1_launch.sh
 }
 
 vicyos_polybar_laptop(){
@@ -117,7 +114,7 @@ else
 	# Remove the polybar folder to avoid any conflicts
 	# Copy the vicyos modified polybar files to ~/.config/polybar
 	rm -R ~/.config/polybar
-	cp -r needed_files/vicyos_modified_polybar ~/.config/polybar
+	cp -r needed_files/vicyos_modified_polybar_laptop ~/.config/polybar
 	
 	# Delete "autostart" file in "~/.config/openbox/" to avoid any conflicts
 	# Copy a modified "autostart" file to "~/.config/openbox/"
@@ -165,7 +162,7 @@ fi
 loading_banner
 reset_color
 add_vicyos_repo 
-# TODO // vicyos_polybar_desktop 
+# vicyos_polybar_desktop 
 vicyos_polybar_laptop
 vicyos_zsh
 update 

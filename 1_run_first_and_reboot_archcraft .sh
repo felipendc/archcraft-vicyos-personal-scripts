@@ -158,9 +158,6 @@ trizen -S google-chrome --needed --noconfirm
 trizen -S visual-studio-code-bin --needed --noconfirm
 trizen -S android-studio --needed --noconfirm
 trizen -S bluetooth-autoconnect --needed --noconfirm
-trizen -S bluez --needed --noconfirm
-trizen -S bluez-utils --needed --noconfirm
-trizen -S bluez-utils-compat --needed --noconfirm
 }
 
 reboot_os(){
