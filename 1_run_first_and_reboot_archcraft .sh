@@ -147,10 +147,28 @@ sudo pacman -S perl-lwp-protocol-https --noconfirm
 sudo pacman -S perl-term-readline-gnu --noconfirm
 sudo pacman -S hplip --noconfirm
 
-# Bluetooth
-sudo pacman -S gnome-bluetooth --noconfirm
-sudo pacman -S gnome-control-center --noconfirm
-sudo pacman -S blueberry --needed
+###audio
+sudo pacman -S alsa-firmware --noconfirm
+sudo pacman -S alsa-plugins --noconfirm
+sudo pacman -S alsa-lib --noconfirm
+sudo pacman -S alsa-utils --noconfirm
+sudo pacman -S gst-libav --noconfirm
+sudo pacman -S gst-plugins-bad --noconfirm
+sudo pacman -S gst-plugins-base --noconfirm
+sudo pacman -S gst-plugins-good --noconfirm
+sudo pacman -S gst-plugins-ugly --noconfirm
+sudo pacman -S gstreamer --noconfirm
+sudo pacman -S libdvdcss --noconfirm
+sudo pacman -S pulseaudio --noconfirm
+sudo pacman -S pulseaudio-alsa --noconfirm
+sudo pacman -S pavucontrol --noconfirm
+
+###bluetooth
+sudo pacman -S blueberry --noconfirm
+sudo pacman -S bluez --noconfirm
+sudo pacman -S bluez-libs --noconfirm
+sudo pacman -S bluez-utils --noconfirm
+sudo pacman -S pulseaudio-bluetooth --noconfirm
 
 ###### Trizen #######
 
@@ -165,6 +183,9 @@ trizen -S visual-studio-code-bin --needed --noconfirm
 trizen -S android-studio --needed --noconfirm
 trizen -S onlyoffice-bin --needed --noconfirm
 trizen -S kdenlive --needed --noconfirm
+
+# Broadcom BCM20702 Bluetooth 4.0 USB Adapter Driver
+trizen -S broadcom-bt-firmware-git --noconfirm
 }
 
 reboot_os(){
