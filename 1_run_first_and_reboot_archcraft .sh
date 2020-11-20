@@ -147,22 +147,6 @@ sudo pacman -S perl-lwp-protocol-https --noconfirm
 sudo pacman -S perl-term-readline-gnu --noconfirm
 sudo pacman -S hplip --noconfirm
 
-###audio
-sudo pacman -S alsa-firmware --noconfirm
-sudo pacman -S alsa-plugins --noconfirm
-sudo pacman -S alsa-lib --noconfirm
-sudo pacman -S alsa-utils --noconfirm
-sudo pacman -S gst-libav --noconfirm
-sudo pacman -S gst-plugins-bad --noconfirm
-sudo pacman -S gst-plugins-base --noconfirm
-sudo pacman -S gst-plugins-good --noconfirm
-sudo pacman -S gst-plugins-ugly --noconfirm
-sudo pacman -S gstreamer --noconfirm
-sudo pacman -S libdvdcss --noconfirm
-sudo pacman -S pulseaudio --noconfirm
-sudo pacman -S pulseaudio-alsa --noconfirm
-sudo pacman -S pavucontrol --noconfirm
-
 ###### Trizen #######
 
 # Hplib Gui: 

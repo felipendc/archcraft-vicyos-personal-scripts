@@ -166,10 +166,17 @@ sh ./needed_files/ArcolinuxD-OpenBox-Scripts/130-bluetooth.sh
 sh ./needed_files/ArcolinuxD-OpenBox-Scripts/make-bluetooth-systemicon-visible-again.sh
 }
 
+printers(){
+# Install packages for printer 
+sh ./needed_files/ArcolinuxD-OpenBox-Scripts/140-printers.sh
+}
+
+
 loading_banner
 reset_color
 add_vicyos_repo 
 fix_bluetooth
+printers
 # vicyos_polybar_desktop 
 vicyos_polybar_laptop
 vicyos_zsh
