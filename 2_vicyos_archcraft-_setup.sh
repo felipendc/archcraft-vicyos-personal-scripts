@@ -158,10 +158,18 @@ else
 fi
 }
 
+fix_bluetooth(){
+# Install bluetooth, enable and start its services!
+sh ./needed_files/ArcolinuxD-OpenBox-Scripts/130-bluetooth.sh
+
+# Make bluetooth systemicon visible again!
+sh ./needed_files/ArcolinuxD-OpenBox-Scripts/make-bluetooth-systemicon-visible-again.sh
+}
 
 loading_banner
 reset_color
 add_vicyos_repo 
+fix_bluetooth
 # vicyos_polybar_desktop 
 vicyos_polybar_laptop
 vicyos_zsh

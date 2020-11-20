@@ -163,13 +163,6 @@ sudo pacman -S pulseaudio --noconfirm
 sudo pacman -S pulseaudio-alsa --noconfirm
 sudo pacman -S pavucontrol --noconfirm
 
-###bluetooth
-sudo pacman -S blueberry --noconfirm
-sudo pacman -S bluez --noconfirm
-sudo pacman -S bluez-libs --noconfirm
-sudo pacman -S bluez-utils --noconfirm
-sudo pacman -S pulseaudio-bluetooth --noconfirm
-
 ###### Trizen #######
 
 # Hplib Gui: 
@@ -184,8 +177,6 @@ trizen -S android-studio --needed --noconfirm
 trizen -S onlyoffice-bin --needed --noconfirm
 trizen -S kdenlive --needed --noconfirm
 
-# Broadcom BCM20702 Bluetooth 4.0 USB Adapter Driver
-trizen -S broadcom-bt-firmware-git --noconfirm
 }
 
 reboot_os(){
