@@ -177,6 +177,11 @@ trizen -S android-studio --needed --noconfirm
 trizen -S onlyoffice-bin --needed --noconfirm
 trizen -S kdenlive --needed --noconfirm
 
+# Zsh stuff
+trizen -S oh-my-zsh-git --needed --noconfirm
+trizen -S zsh-completions --needed --noconfirm
+trizen -S zsh-syntax-highlighting --needed --noconfirm
+
 }
 
 reboot_os(){
