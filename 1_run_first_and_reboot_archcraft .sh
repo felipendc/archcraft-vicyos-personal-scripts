@@ -162,6 +162,8 @@ sudo pacman -S hwinfo --noconfirm
 sudo pacman -S firefox --noconfirm
 sudo pacman -S adb --noconfirm
 sudo pacman -S gnome-disk-utility --noconfirm
+sudo pacman -S whatsapp-nativefier --noconfirm
+
 
 ###### Trizen Dependencies ######
 sudo pacman -S git --noconfirm
@@ -198,6 +200,7 @@ sudo pacman -S xsensors --noconfirm
 # Hplib Gui: 
 trizen -S python-pyqt5 --needed --noconfirm
 
+trizen -S telegram-desktop-bin --needed --noconfirm
 trizen -S wget --needed --noconfirm
 trizen -S redshiftgui-bin --needed --noconfirm
 trizen -S python --needed --noconfirm
