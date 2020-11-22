@@ -12,9 +12,9 @@ source ./needed_files/vicyos_banner/vicyos_setup_banner.sh
 ################################################################
 
 snapd_install(){
+# Check if Snapd is already installed
 if  pacman -Qi snapd &> /dev/null; then
 	echo "Snapd is already installed." 
-
 else
 	echo "Installing Snapd." 
 
@@ -219,9 +219,9 @@ sudo reboot
 }
 
 
-# loading_banner
-# update
-# trizen
+loading_banner
+update
+trizen
 snapd_install
-# personal_pkgs
-# reboot_os
+personal_pkgs
+reboot_os
