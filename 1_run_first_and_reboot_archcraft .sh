@@ -18,6 +18,11 @@ if  pacman -Qi snapd &> /dev/null; then
 else
 	echo "Installing Snapd." 
 
+	# Clear temp files to avoid any conflicts
+	if [ -d "snapd" ]; then
+		rm -Rvf snapd
+	fi
+
 	# Download and install Snapd
 	git clone https://aur.archlinux.org/snapd.git
 	cd snapd
@@ -28,6 +33,10 @@ else
 
 	# create a symbolic l
 	sudo ln -s /var/lib/snapd/snap /snap
+	
+	# Clear temp files
+	cd ../
+	rm -Rvf snapd
 fi
 }
 
@@ -210,7 +219,7 @@ sudo reboot
 }
 
 
-loading_banner
+# loading_banner
 # update
 # trizen
 snapd_install
