@@ -163,7 +163,7 @@ sudo pacman -S firefox --noconfirm
 sudo pacman -S adb --noconfirm
 sudo pacman -S gnome-disk-utility --noconfirm
 sudo pacman -S whatsapp-nativefier --noconfirm
-
+sudo pacman -S balena-etcher --noconfirm
 
 ###### Trizen Dependencies ######
 sudo pacman -S git --noconfirm
