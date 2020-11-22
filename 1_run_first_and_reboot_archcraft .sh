@@ -16,7 +16,18 @@ if  pacman -Qi snapd &> /dev/null; then
 	echo "Snapd is already installed." 
 
 else
-	echo "Snapd is not installed." 
+	echo "Installing Snapd." 
+
+	# Download and install Snapd
+	git clone https://aur.archlinux.org/snapd.git
+	cd snapd
+	makepkg -si
+
+	# enabled snapd.socket
+	sudo systemctl enable --now snapd.socket
+
+	# create a symbolic l
+	sudo ln -s /var/lib/snapd/snap /snap
 fi
 }
 
