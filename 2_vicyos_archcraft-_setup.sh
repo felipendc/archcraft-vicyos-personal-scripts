@@ -86,6 +86,7 @@ else
 	chmod +x ~/.config/polybar/forest/launch.sh
 	chmod +x ~/.config/polybar/default/launch.sh
 	chmod +x ~/.config/polybar/beach/launch.sh	
+fi
 }
 
 vicyos_polybar_laptop(){
@@ -171,6 +172,10 @@ printers(){
 sh ./needed_files/ArcolinuxD-OpenBox-Scripts/140-printers.sh
 }
 
+snap_apps(){
+sudo snap install youtube-music-desktop-app
+sudo snap install strimio-desktop
+}
 
 loading_banner
 reset_color
@@ -180,4 +185,6 @@ printers
 # vicyos_polybar_desktop 
 vicyos_polybar_laptop
 vicyos_zsh
+snap_apps
 update 
+
