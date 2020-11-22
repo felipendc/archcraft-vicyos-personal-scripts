@@ -202,7 +202,7 @@ case $GET_OPTION in
 	c )
 		# Cancel the script
 		printf "\033c"
-    	echo
+		echo
 		echo "#######################################"
 		echo "####   The script was cancelled    ####"
 		echo "#######################################"
