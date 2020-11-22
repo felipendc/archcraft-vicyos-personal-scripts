@@ -163,6 +163,9 @@ sudo pacman -S firefox --noconfirm
 sudo pacman -S adb --noconfirm
 sudo pacman -S gnome-disk-utility --noconfirm
 sudo pacman -S whatsapp-nativefier --noconfirm
+
+# Once installed open it on the terminal:
+# sudo balena-etcher-electron
 sudo pacman -S balena-etcher --noconfirm
 
 ###### Trizen Dependencies ######
