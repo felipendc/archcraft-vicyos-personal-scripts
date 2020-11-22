@@ -177,6 +177,7 @@ sudo snap install youtube-music-desktop-app
 sudo snap install strimio-desktop
 }
 
+
 loading_banner
 reset_color
 add_vicyos_repo 
