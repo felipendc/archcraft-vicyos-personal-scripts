@@ -10,6 +10,16 @@ source ./needed_files/vicyos_banner/vicyos_setup_banner.sh
 # My Github             :   github.com/felipendc               #
 # Important Note        :   I use Arch! btw... Hahaha!         #
 ################################################################
+
+snapd_install(){
+if  pacman -Qi snapd &> /dev/null; then
+	echo "Snapd is already installed." 
+
+else
+	echo "Snapd is not installed." 
+fi
+}
+
 install_trizen(){
 # Unpacking file
 rm -Rvf trizen
@@ -82,7 +92,6 @@ else
 				echo "Time is out! 120 seconds (2 minutes) went by." 
 				echo "Please, check if your internet speed is slow or your connection is working and try again." 
 				echo ""
-				exit
 			else
 				echo "Please wait... $trizen_file is being downloaded! $counter$seconds_is"
 			fi
@@ -191,7 +200,8 @@ sudo reboot
 
 
 loading_banner
-update
-trizen
-personal_pkgs
-reboot_os
+# update
+# trizen
+snapd_install
+# personal_pkgs
+# reboot_os
