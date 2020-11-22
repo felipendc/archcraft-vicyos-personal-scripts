@@ -178,14 +178,61 @@ sudo snap install strimio-desktop
 }
 
 
-loading_banner
-reset_color
-add_vicyos_repo 
-fix_bluetooth
-printers
-# vicyos_polybar_desktop 
-vicyos_polybar_laptop
-vicyos_zsh
-snap_apps
-update 
+choose_installation(){
+printf "\033c"
+echo
+tput setaf 4
+echo "################################################################"
+echo "#####  Choose wisely - one time setup after clean install   ####"
+echo "################################################################"
+tput sgr0
+echo
+echo "Select the correct desktop"
+echo
+echo "c = Cancel"
+echo "d = Desktop"
+echo "l = Laptop"
 
+echo "Chose an option..."
+
+read GET_OPTION
+
+case $GET_OPTION in
+
+	c )
+		# Cancel the script
+		printf "\033c"
+    	echo
+		echo "#######################################"
+		echo "####   The script was cancelled    ####"
+		echo "#######################################"
+		echo
+	;;
+	d )
+		# Setting up files for Desktop
+		printf "\033c"
+		loading_banner
+		add_vicyos_repo 
+		fix_bluetooth
+		printers
+		vicyos_polybar_desktop 
+		vicyos_zsh
+		snap_apps
+		update 
+	;;
+	l )
+		# Setting up files for Laptop
+		printf "\033c"
+		loading_banner
+		add_vicyos_repo 
+		fix_bluetooth
+		printers
+		vicyos_polybar_laptop
+		vicyos_zsh
+		snap_apps
+		update 
+	;;
+esac
+}
+
+choose_installation
