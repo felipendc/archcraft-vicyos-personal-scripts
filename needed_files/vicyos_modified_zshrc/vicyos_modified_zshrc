@@ -133,7 +133,7 @@ bindkey -v
 neofetch
 
 # update the packages with pacman and yay
-alias upall="sudo pacman -Syyu --noconfirm; yay -Syu --noconfirm; flatpak update; sudo snap refresh"
+alias upall="sudo pacman -Syyu --noconfirm; yay -Syu --noconfirm; flatpak update; sudo snap refresh; clear"
 alias update='sudo pacman -Syyu'
 
 #pacman unlock
