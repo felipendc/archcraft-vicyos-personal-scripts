@@ -133,7 +133,7 @@ bindkey -v
 neofetch
 
 # update the packages with pacman and yay
-alias upall="sudo pacman -Syyu --noconfirm; yay -Syu --noconfirm; flatpak update; sudo snap refresh; clear"
+alias upall="sudo pacman -Syyu --noconfirm; yay -Syu --noconfirm"
 alias update='sudo pacman -Syyu'
 
 #pacman unlock
@@ -237,17 +237,6 @@ alias tremove='trizen -R'
 alias sinstall='sudo snap install'
 alias sremove='sudo snap remove'
 
-
-
-
-
-#### Open links:
-
-# Vicyos repo
-alias vrepo='google-chrome-stable https://github.com/felipendc\?tab\=repositories'
-
-# Archcraft personal script repo
-alias arepo='google-chrome-stable https://github.com/felipendc/archcraft-vicyos-personal-scripts'
 
 ############ CCACHE to compile android custom roms! ############
 #export USE_CCACHE=1
