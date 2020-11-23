@@ -230,6 +230,14 @@ alias remove='sudo pacman -R'
 alias fremove='sudo pacman -Rdd'
 
 
+#### Open links:
+
+# Vicyos repo
+alias vrepo='xdg-open https://github.com/felipendc\?tab\=repositories'
+
+# Archcraft personal script repo
+alias ascript='xdg-open https://github.com/felipendc/archcraft-vicyos-personal-scripts'
+
 ############ CCACHE to compile android custom roms! ############
 #export USE_CCACHE=1
 #export CCACHE_DIR="${HOME}/.ccache"
