@@ -203,6 +203,10 @@ sudo pacman -S xsensors --noconfirm
 # Hplib Gui: 
 trizen -S python-pyqt5 --needed --noconfirm
 
+# github-desktop
+trizen -S gconf --needed --noconfirm
+trizen -S github-desktop --needed --noconfirm
+
 trizen -S telegram-desktop-bin --needed --noconfirm
 trizen -S wget --needed --noconfirm
 trizen -S redshiftgui-bin --needed --noconfirm
