@@ -236,7 +236,7 @@ alias fremove='sudo pacman -Rdd'
 alias vrepo='xdg-open https://github.com/felipendc\?tab\=repositories'
 
 # Archcraft personal script repo
-alias ascript='xdg-open https://github.com/felipendc/archcraft-vicyos-personal-scripts'
+alias arepo='xdg-open https://github.com/felipendc/archcraft-vicyos-personal-scripts'
 
 ############ CCACHE to compile android custom roms! ############
 #export USE_CCACHE=1
