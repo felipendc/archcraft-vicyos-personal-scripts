@@ -181,6 +181,7 @@ sudo pacman -S perl-lwp-protocol-https --noconfirm
 sudo pacman -S perl-term-readline-gnu --noconfirm
 sudo pacman -S hplip --noconfirm
 sudo pacman -S xsensors --noconfirm
+sudo pacman -S flatpak --noconfirm
 
 ###audio
 # sudo pacman -S alsa-firmware --noconfirm

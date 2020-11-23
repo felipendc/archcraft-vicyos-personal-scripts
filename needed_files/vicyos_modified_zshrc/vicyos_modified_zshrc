@@ -133,7 +133,7 @@ bindkey -v
 neofetch
 
 # update the packages with pacman and yay
-alias upall="sudo pacman -Syyu --noconfirm && yay -Syu --noconfirm"
+alias upall="sudo pacman -Syyu --noconfirm; yay -Syu --noconfirm; flatpak update; sudo snap refresh"
 alias update='sudo pacman -Syyu'
 
 #pacman unlock
@@ -223,11 +223,23 @@ alias trash='cd ~/.local/share/Trash'
 alias ctrash='sudo   rm -rvf ~/.local/share/Trash/*'
 
 
-# Pacman 
+# Pacman, Trizen, Snap, and Flatpak
 alias install='sudo pacman -S'
-alias tinstall='trizen -S'
 alias remove='sudo pacman -R'
-alias fremove='sudo pacman -Rdd'
+alias force-remove='sudo pacman -Rdd'
+
+alias finstall='flatpak install'
+alias fremove='flatpak uninstall'
+
+alias tinstall='trizen -S'
+alias tremove='trizen -R'
+
+
+alias sinstall='sudo snap install'
+alias sremove='sudo snap remove'
+
+
+
 
 
 #### Open links:
