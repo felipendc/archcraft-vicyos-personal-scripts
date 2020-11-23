@@ -207,6 +207,7 @@ trizen -S python-pyqt5 --needed --noconfirm
 trizen -S gconf --needed --noconfirm
 trizen -S github-desktop --needed --noconfirm
 
+trizen -S google-chrome --needed --noconfirm
 trizen -S telegram-desktop-bin --needed --noconfirm
 trizen -S wget --needed --noconfirm
 trizen -S redshiftgui-bin --needed --noconfirm
