@@ -234,7 +234,6 @@ alias fremove='flatpak uninstall'
 alias tinstall='trizen -S'
 alias tremove='trizen -R'
 
-
 alias sinstall='sudo snap install'
 alias sremove='sudo snap remove'
 
