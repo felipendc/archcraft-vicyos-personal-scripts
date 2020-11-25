@@ -177,6 +177,10 @@ sudo snap install youtube-music-desktop-app
 sudo snap install strimio-desktop
 }
 
+flatpak_apps(){
+sudo flatpak install -y needed_files/flatpak/org.onlyoffice.desktopeditors.flatpakref
+sudo flatpak install -y needed_files/flatpak/net.codeindustry.MasterPDFEditor.flatpakref
+}
 
 choose_installation(){
 printf "\033c"
@@ -218,6 +222,7 @@ case $GET_OPTION in
 		vicyos_polybar_desktop 
 		vicyos_zsh
 		snap_apps
+		flatpak_apps
 		update 
 	;;
 	l )
@@ -230,6 +235,7 @@ case $GET_OPTION in
 		vicyos_polybar_laptop
 		vicyos_zsh
 		snap_apps
+		flatpak_apps
 		update 
 	;;
 esac
