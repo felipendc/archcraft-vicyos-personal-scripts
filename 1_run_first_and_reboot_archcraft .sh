@@ -231,8 +231,14 @@ reboot_os(){
 sudo reboot
 }
 
+remove_apps(){
+# Remove unnecessary apps
+sudo pacman -Rdd mplayer --noconfirm
+
+}
 
 loading_banner
+remove_apps
 update
 trizen
 snapd_install
