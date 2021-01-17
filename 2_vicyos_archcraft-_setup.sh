@@ -32,8 +32,8 @@ cat >> /etc/pacman.conf <<- _EOF_
 add_vicyos_repo () {
 # Check if Vicyos repository already exists. 
 # If it's missing, add it to the pacman.config file.
-repo_get_line=$(grep -E "(vicyos-repo)" /etc/pacman.conf)
-repo_vicyos_line="[vicyos-repo]"
+repo_get_line=$(grep -E "(v_twenty_repo)" /etc/pacman.conf)
+repo_vicyos_line="[v_twenty_repo]"
 
 if [ "$repo_get_line" == "$repo_vicyos_line" ]; then
     echo "Vicyos repository already exists."
