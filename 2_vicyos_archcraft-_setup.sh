@@ -27,6 +27,9 @@ cat >> /etc/pacman.conf <<- _EOF_
 	SigLevel = Optional TrustedOnly 
 	Server = https://felipendc.github.io/\$repo/\$arch
 	_EOF_
+	
+	# Refresh the database and the repository
+	sudo pacman -Syyu
 }
 
 add_vicyos_repo () {
