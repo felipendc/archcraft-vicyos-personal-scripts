@@ -23,7 +23,7 @@ vicyos_repo () {
 cat >> /etc/pacman.conf <<- _EOF_
 
 	## Vicyos Repository
-	[vicyos-repo]
+	[v_twenty_repo]
 	SigLevel = Optional TrustedOnly 
 	Server = https://felipendc.github.io/\$repo/\$arch
 	_EOF_
