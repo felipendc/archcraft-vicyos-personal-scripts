@@ -128,8 +128,13 @@ install_trizen
 
 update(){
 # Sync and refresh pacman database and update the all of the packages
-sudo pacman -Syyu --noconfirm
+
+sudo pacman -Syy && sudo pacman -Syu --noconfirm
 yay -Syu --noconfirm
+
+sudo pacman -S archlinux-keyring
+sudo pacman-key --populate
+
 }
 
 personal_pkgs(){
