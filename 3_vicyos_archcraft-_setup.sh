@@ -255,14 +255,26 @@ trizen -S zsh-syntax-highlighting --needed --noconfirm
 
 nvidia_install(){
 sudo pacman -Rsd nvidia --noconfirm
+sudo pacman -Rsd nvidia-390xx --noconfirm 
 sudo pacman -Rsd nvidia-settings --noconfirm
 sudo pacman -Rsd nvidia-utils --noconfirm
+sudo pacman -Rsd nvidia-390xx-dkms --noconfirm
+sudo pacman -Rsd lib32-nvidia-utils --noconfirm
+sudo pacman -Rsd nvidia-390xx-utils --noconfirm
 
 sudo pacman -S libgl
 
-trizen -S nvidia-390xx
-sudo pacman -S nvidia-settings
-sudo nvidia-settings
+sudo pacman -S nvidia
+
+#trizen -S opencl-nvidia-390xx
+#trizen -S nvidia-390xx
+# choose: dkms
+
+#sudo pacman -S lib32-nvidia-utils
+#sudo nvidia-xconfig
+
+#sudo pacman -S nvidia-settings
+#sudo nvidia-settings
 }
 
 
@@ -308,7 +320,7 @@ case $GET_OPTION in
 		flatpak_apps
 		trizen_personal_pkgs
 		personal_pkgs
-		nvidia_install
+		#nvidia_install
 		update 
 	;;
 	l )
