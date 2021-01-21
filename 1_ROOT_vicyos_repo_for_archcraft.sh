@@ -23,8 +23,11 @@ source ./needed_files/vicyos_banner/vicyos_setup_banner.sh
 
 update () {
 # Sync and refresh pacman database and update the all of the packages
-sudo pacman -Syyu --noconfirm
+sudo pacman -Syy && sudo pacman -Syu --noconfirm
 yay -Syu --noconfirm
+
+sudo pacman -S archlinux-keyring
+sudo pacman-key --populate
 }
 
 vicyos_repo () {

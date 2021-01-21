@@ -17,37 +17,38 @@ MAGENTABG="$(printf '\033[45m')"  CYANBG="$(printf '\033[46m')"  WHITEBG="$(prin
 GRAY="$(printf '\e[0;39m')" DARK_GRAY="$(printf '\e[1;30m')" LIGHT_CYAN="$(printf '\e[1;36m')"
 RESET="$(printf '\u001b[0m')"
 
-
+Script for my        
+Written to be used on
 ## Banner
 vicyos_banner() {
     clear
     cat <<- _EOF_
-        ${DARK_GRAY}┌─────────────────────────────────────────────────────────────────────────┐
-        ${DARK_GRAY}│ ${WHITE}Written to be used on my Thinkpad T430 or Desktop with Archcraft Linux. ${DARK_GRAY}│
-        ${DARK_GRAY}│                                                                         ${DARK_GRAY}│
-        ${DARK_GRAY}│ ${BLUE}Desktop Environment   :   $v_desktop                                       ${DARK_GRAY}│
-        ${DARK_GRAY}│ ${BLUE}Author                :   $v_author                            ${DARK_GRAY}│
-        ${DARK_GRAY}│ ${BLUE}My Github             :   $v_github                          ${DARK_GRAY}│
-        ${DARK_GRAY}│ ${BLUE}Important Note        :   $v_note                    ${DARK_GRAY}│
-        ${DARK_GRAY}│                                                                         ${DARK_GRAY}│
-        ${DARK_GRAY}│ ${GREEN}Vicyos personal script will start in: $counter                                 ${DARK_GRAY}│
-        ${DARK_GRAY}└─────────────────────────────────────────────────────────────────────────┘
+        ${DARK_GRAY}┌─────────────────────────────────────────────────────────────────┐
+        ${DARK_GRAY}│ ${WHITE}Script for my Thinkpad T430 or Desktop with Archcraft Linux.    ${DARK_GRAY}│
+        ${DARK_GRAY}│                                                                 ${DARK_GRAY}│
+        ${DARK_GRAY}│ ${BLUE}Desktop Environment   :   $v_desktop                               ${DARK_GRAY}│
+        ${DARK_GRAY}│ ${BLUE}Author                :   $v_author                    ${DARK_GRAY}│
+        ${DARK_GRAY}│ ${BLUE}My Github             :   $v_github                  ${DARK_GRAY}│
+        ${DARK_GRAY}│ ${BLUE}Important Note        :   $v_note            ${DARK_GRAY}│
+        ${DARK_GRAY}│                                                                 ${DARK_GRAY}│
+        ${DARK_GRAY}│ ${GREEN}Vicyos personal script will start in: $counter                         ${DARK_GRAY}│
+        ${DARK_GRAY}└─────────────────────────────────────────────────────────────────┘
 	_EOF_
 }
 
 here_we_go() {
     clear
     cat <<- _EOF_
-        ${DARK_GRAY}┌─────────────────────────────────────────────────────────────────────────┐
-        ${DARK_GRAY}│ ${WHITE}Written to be used on my Thinkpad T430 or Desktop with Archcraft Linux. ${DARK_GRAY}│
-        ${DARK_GRAY}│                                                                         ${DARK_GRAY}│
-        ${DARK_GRAY}│ ${BLUE}Desktop Environment   :   ${GRAY}Openbox                                       ${DARK_GRAY}│
-        ${DARK_GRAY}│ ${BLUE}Author                :   ${GRAY}Vicyos (felipendc)                            ${DARK_GRAY}│
-        ${DARK_GRAY}│ ${BLUE}My Github             :   ${GRAY}github.com/felipendc                          ${DARK_GRAY}│
-        ${DARK_GRAY}│ ${BLUE}Important Note        :   ${GRAY}I use Arch! btw... Hahaha!                    ${DARK_GRAY}│
-        ${DARK_GRAY}│                                                                         ${DARK_GRAY}│
-        ${DARK_GRAY}│ ${GREEN}Vicyos personal script will start in: ${RED}Here we go!                       ${DARK_GRAY}│
-        ${DARK_GRAY}└─────────────────────────────────────────────────────────────────────────┘
+        ${DARK_GRAY}┌─────────────────────────────────────────────────────────────────┐
+        ${DARK_GRAY}│ ${WHITE}Script for my Thinkpad T430 or Desktop with Archcraft Linux.    ${DARK_GRAY}│
+        ${DARK_GRAY}│                                                                 ${DARK_GRAY}│
+        ${DARK_GRAY}│ ${BLUE}Desktop Environment   :   ${GRAY}Openbox                               ${DARK_GRAY}│
+        ${DARK_GRAY}│ ${BLUE}Author                :   ${GRAY}Vicyos (felipendc)                    ${DARK_GRAY}│
+        ${DARK_GRAY}│ ${BLUE}My Github             :   ${GRAY}github.com/felipendc                  ${DARK_GRAY}│
+        ${DARK_GRAY}│ ${BLUE}Important Note        :   ${GRAY}I use Arch! btw... Hahaha!            ${DARK_GRAY}│
+        ${DARK_GRAY}│                                                                 ${DARK_GRAY}│
+        ${DARK_GRAY}│ ${GREEN}Vicyos personal script will start in: ${RED}Here we go!               ${DARK_GRAY}│
+        ${DARK_GRAY}└─────────────────────────────────────────────────────────────────┘
 	_EOF_
 }
 
@@ -137,3 +138,4 @@ done
 tput sgr0
 tput op
 }
+

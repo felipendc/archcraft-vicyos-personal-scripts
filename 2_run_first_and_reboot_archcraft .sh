@@ -70,7 +70,7 @@ seconds_is=""
 # Wait until trizen snapshot is downloaded and trigger the trizen installation function (install_trizen)
 if  pacman -Qi trizen &> /dev/null; then
 	echo "Trizen is already installed." 
-	exit
+#	exit
 else
 	if [ -e "$trizen_file" ]; then
 
@@ -131,105 +131,6 @@ update(){
 
 sudo pacman -Syy && sudo pacman -Syu --noconfirm
 yay -Syu --noconfirm
-
-sudo pacman -S archlinux-keyring
-sudo pacman-key --populate
-
-}
-
-personal_pkgs(){
-###### Pacman ########
-
-# fix timezone:
-sudo pacman -S chrony --noconfirm
-
-# Davinci Resolve fix:
-sudo pacman -S ocl-icd --noconfirm
-
-sudo pacman -S gnome-system-monitor --noconfirm
-sudo pacman -S playerctl --noconfirm
-sudo pacman -S gimp --noconfirm
-sudo pacman -S inkscape --noconfirm
-sudo pacman -S qbittorrent --noconfirm
-sudo pacman -S vlc --noconfirm
-sudo pacman -S youtube-dl --noconfirm
-sudo pacman -S clementine --noconfirm
-sudo pacman -S krita --noconfirm
-sudo pacman -S gnome-calculator --noconfirm
-sudo pacman -S clipgrab --noconfirm
-sudo pacman -S pinta --noconfirm
-sudo pacman -S filezilla --noconfirm
-sudo pacman -S python-pip  --noconfirm
-sudo pacman -S curl --noconfirm
-sudo pacman -S simple-scan --noconfirm
-sudo pacman -S arandr --noconfirm
-sudo pacman -S hwinfo --noconfirm
-sudo pacman -S firefox --noconfirm
-sudo pacman -S adb --noconfirm
-sudo pacman -S gnome-disk-utility --noconfirm
-sudo pacman -S whatsapp-nativefier --noconfirm
-
-# Once installed open it on the terminal:
-# sudo balena-etcher-electron
-sudo pacman -S balena-etcher --noconfirm
-
-###### Trizen Dependencies ######
-sudo pacman -S git --noconfirm
-sudo pacman -S pacutils --noconfirm
-sudo pacman -S perl>=5.20.0 --noconfirm
-sudo pacman -S perl-libwww --noconfirm
-sudo pacman -S perl-term-ui --noconfirm
-sudo pacman -S pacman --noconfirm
-sudo pacman -S perl-json --noconfirm
-sudo pacman -S perl-data-dump --noconfirm
-sudo pacman -S perl-lwp-protocol-https --noconfirm
-sudo pacman -S perl-term-readline-gnu --noconfirm
-sudo pacman -S hplip --noconfirm
-sudo pacman -S xsensors --noconfirm
-sudo pacman -S flatpak --noconfirm
-sudo pacman -S handbrake --noconfirm
-
-###audio
-# sudo pacman -S alsa-firmware --noconfirm
-# sudo pacman -S alsa-plugins --noconfirm
-# sudo pacman -S alsa-lib --noconfirm
-# sudo pacman -S alsa-utils --noconfirm
-# sudo pacman -S gst-libav --noconfirm
-# sudo pacman -S gst-plugins-bad --noconfirm
-# sudo pacman -S gst-plugins-base --noconfirm
-# sudo pacman -S gst-plugins-good --noconfirm
-# sudo pacman -S gst-plugins-ugly --noconfirm
-# sudo pacman -S gstreamer --noconfirm
-# sudo pacman -S libdvdcss --noconfirm
-# sudo pacman -S pulseaudio --noconfirm
-# sudo pacman -S pulseaudio-alsa --noconfirm
-# sudo pacman -S pavucontrol --noconfirm
-
-###### Trizen #######
-
-# Hplib Gui: 
-trizen -S python-pyqt5 --needed --noconfirm
-
-# github-desktop
-trizen -S gconf --needed --noconfirm
-trizen -S github-desktop --needed --noconfirm
-
-trizen -S google-chrome --needed --noconfirm
-trizen -S telegram-desktop-bin --needed --noconfirm
-trizen -S wget --needed --noconfirm
-trizen -S redshiftgui-bin --needed --noconfirm
-trizen -S python --needed --noconfirm
-trizen -S google-chrome --needed --noconfirm
-trizen -S visual-studio-code-bin --needed --noconfirm
-trizen -S android-studio --needed --noconfirm
-trizen -S onlyoffice-bin --needed --noconfirm
-trizen -S kdenlive --needed --noconfirm
-
-# Zsh stuff
-trizen -S oh-my-zsh-git --needed --noconfirm
-trizen -S zsh-completions --needed --noconfirm
-trizen -S zsh-syntax-highlighting --needed --noconfirm
-
 }
 
 reboot_os(){
@@ -245,7 +146,6 @@ sudo pacman -Rdd mplayer --noconfirm
 loading_banner
 remove_apps
 update
-trizen
 snapd_install
-personal_pkgs
+trizen
 reboot_os
