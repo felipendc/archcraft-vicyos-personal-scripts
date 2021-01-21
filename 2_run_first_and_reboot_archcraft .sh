@@ -3,13 +3,13 @@
 # Import vicyos_setup_banner.sh
 source ./needed_files/vicyos_banner/vicyos_setup_banner.sh
 
-################################################################
-# Written to be used on my Thinkpad T430 with Archcraft Linux. #
-# Desktop Environment   :   Openbox                            #
-# Author                :   Vicyos (felipendc)                 #
-# My Github             :   github.com/felipendc               #
-# Important Note        :   I use Arch! btw... Hahaha!         #
-################################################################
+###########################################################################
+# Written to be used on my Thinkpad T430 or Desktop with Archcraft Linux. #
+# Desktop Environment   :   Openbox                                       #
+# Author                :   Vicyos (felipendc)                            #
+# My Github             :   github.com/felipendc                          #
+# Important Note        :   I use Arch! btw... Hahaha!                    #
+###########################################################################
 
 snapd_install(){
 # Check if Snapd is already installed
