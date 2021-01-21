@@ -47,7 +47,7 @@ tar -xvf $trizen_file
 
 # Compile trizen, install it, and clean up the temp files
 cd trizen
-makepkg -si
+makepkg -s
 sudo pacman -U trizen*.zst --noconfirm
 cd ../
 rm -Rvf trizen
